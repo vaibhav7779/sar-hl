@@ -93,7 +93,7 @@ class _ApprovalState extends State<Approval> {
                             fontSize: 20, fontWeight: FontWeight.w200),
                       ),
                       Text(
-                        "₹2,00,000",
+                        "₹1,00,00,000",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w600,
@@ -146,7 +146,7 @@ class _ApprovalState extends State<Approval> {
                               colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                             ).createShader(bounds),
                             child: const Text(
-                              '₹2,00,000',
+                              '₹1,00,00,000',
                               style: TextStyle(
                                 fontSize: 34.0,
                                 color: Colors.white,
@@ -180,7 +180,7 @@ class _ApprovalState extends State<Approval> {
                         ),
                       ),
                       const Text(
-                        'Interest @ 20.88% PA',
+                        'Interest @ 9.5% PA',
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -200,13 +200,13 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    '₹5100',
+                                    '₹96,800',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
-                                    'x 48 months',
+                                    'x 240 months',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400),
@@ -242,13 +242,13 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    '₹6500',
+                                    '₹1,04,400',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
-                                    'x 36 months',
+                                    'x 180 months',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400),
@@ -282,13 +282,13 @@ class _ApprovalState extends State<Approval> {
                                     MainAxisAlignment.spaceBetween,
                                 children: const [
                                   Text(
-                                    '₹12000',
+                                    '₹1,16,600',
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
                                   Text(
-                                    'x 18 months',
+                                    'x 144 months',
                                     style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400),

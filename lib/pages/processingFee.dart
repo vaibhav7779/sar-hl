@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/addBank.dart';
-import 'package:hl_demo/pages/login.dart';
 import 'package:hl_demo/pages/propertyDetails.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -28,89 +26,158 @@ class _ProcessingFeeState extends State<ProcessingFee> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(22),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
-              const SizedBox(height: 30),
-              Row(
+
+
+              
+              const SizedBox(
+                height: 10,
+              ),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Processing Fee"), Text("4/8")],
+                children: [Text("Processing Fees"), Text("7/8")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
                 totalSteps: 8,
-                currentStep: 4,
+                currentStep: 7,
                 selectedColor: Color(0xFF45C00B),
               ),
-              const SizedBox(height: 34),
-              const Text(
-                "Verify your mobile",
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-              const SizedBox(height: 16),
+
+              const SizedBox(height: 20),
               Card(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                  borderRadius: BorderRadius.circular(30.0),
                 ),
                 elevation: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
+                child: const Padding(
+                  padding: EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Center(
-                        child: const Text(
-                          "Processing Fee",
-                          style: const TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w400),
+                        child: Text(
+                          "Congratulations!",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Color(0xffE97A2A),
+                              fontWeight: FontWeight.w400),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: 20),
 
-                      // SizedBox(height: 20),
-                      // TextButton(
-                      //     onPressed: () {},
-                      //     child: const Text(
-                      //       "Resend OTP",
-                      //       style: TextStyle(
-                      //           color: Color.fromRGBO(233, 122, 42, 1)),
-                      //     ))
+                      Text(
+                        'You are just one click away from your "Dream Home". Pay processing fee to complete your loan sanction process.',
+                        style: TextStyle(
+                            fontSize: 16, fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(26.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Total Amount Payable: ₹2024"),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Credit Card",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Debit Card",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Net Banking",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "UPI",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Paytm Wallet, Postpaid",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Divider(
+                              thickness: 2,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "PhonePe",
+                              style: TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      
                     ],
                   ),
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 40),
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
