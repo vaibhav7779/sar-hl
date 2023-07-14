@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/otp.dart';
+import 'package:hl_demo/pages/basicInfo.dart';
 // import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:otp_text_field/otp_field.dart';
+import 'package:otp_text_field/otp_text_field.dart';
+import 'package:otp_text_field/style.dart';
+// import 'basicInfo.dart';
 
 bool isChecked = false;
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class OTPValidation extends StatefulWidget {
+  const OTPValidation({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<OTPValidation> createState() => _OTPValidationState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _OTPValidationState extends State<OTPValidation> {
+  OtpFieldController otpController = OtpFieldController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
               //   ],
               //   divider: const Icon(Icons.chevron_right),
               // ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [Text("Verify Your Details"), Text("1/11")],
@@ -71,9 +77,9 @@ class _LoginPageState extends State<LoginPage> {
                 currentStep: 1,
                 selectedColor: Color(0xFF45C00B),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 34),
               const Text(
-                "Enter your personal details",
+                "Verify your mobile",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
@@ -90,50 +96,38 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      const Text(
-                        "Please enter accurate information that matches your KYC documents.",
-                        style: const TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w400),
-                      ),
-                      const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          labelText: "Your Name",
-                          hintText: "Enter Your Name",
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFFFFFFF),
+                      Center(
+                        child: const Text(
+                          "Enter OTP",
+                          style: const TextStyle(
+                              fontSize: 14, fontWeight: FontWeight.w400),
                         ),
                       ),
                       const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          labelText: "Mobile Number",
-                          hintText: "Enter Mobile Number",
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFFFFFFF),
-                        ),
-                      ),
-                      const SizedBox(height: 20),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 8.0),
-                        child: Text(
-                            "*We will be sending an OTP to verify your details"),
-                      ),
-                      const SizedBox(height: 24),
-                      TextFormField(
-                        autofocus: false,
-                        decoration: const InputDecoration(
-                          labelText: "PAN",
-                          hintText: "Enter PAN",
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Color(0xFFFFFFFF),
-                        ),
-                      ),
+                      OTPTextField(
+                          obscureText: true,
+                          controller: otpController,
+                          length: 4,
+                          width: MediaQuery.of(context).size.width,
+                          textFieldAlignment: MainAxisAlignment.spaceEvenly,
+                          fieldWidth: 45,
+                          fieldStyle: FieldStyle.box,
+                          outlineBorderRadius: 15,
+                          style: TextStyle(fontSize: 32),
+                          onChanged: (pin) {
+                            print("Changed: " + pin);
+                          },
+                          onCompleted: (pin) {
+                            print("Completed: " + pin);
+                          }),
+                      SizedBox(height: 20),
+                      TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            "Resend OTP",
+                            style: TextStyle(
+                                color: Color.fromRGBO(233, 122, 42, 1)),
+                          ))
                     ],
                   ),
                 ),
@@ -144,13 +138,13 @@ class _LoginPageState extends State<LoginPage> {
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     width: double.infinity,
-                    child: ElevatedButton(
+                    child: 
+                    ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => OTPValidation(),
-                            ));
+                                builder: (context) => BasicInformation()));
                       },
                       child: const Text("Next"),
                     ),
