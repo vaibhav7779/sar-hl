@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/pages/homePage.dart';
-import 'package:hl_demo/pages/login.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,8 +17,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: IncomeVerification(),
-      home: HomePage(),
+      home: const HomePage(),
       theme: ThemeData(
         // AppBar theme
         // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
@@ -38,8 +36,7 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
 
-// textformfield
-
+        hintColor: const Color(0xffBABABA),
 // Text Button
         textButtonTheme: TextButtonThemeData(
           style: ElevatedButton.styleFrom(
