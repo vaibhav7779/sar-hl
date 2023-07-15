@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/pages/coApplicatnt.dart';
-// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 enum ProductType { Gold, Silver, Dimond, Blank }
@@ -35,33 +34,6 @@ class _ApprovalState extends State<Approval> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
               const SizedBox(height: 24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

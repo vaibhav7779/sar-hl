@@ -31,9 +31,6 @@ class _ProcessingFeeState extends State<ProcessingFee> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
-
-              
               const SizedBox(
                 height: 10,
               ),
@@ -47,7 +44,6 @@ class _ProcessingFeeState extends State<ProcessingFee> {
                 currentStep: 7,
                 selectedColor: Color(0xFF45C00B),
               ),
-
               const SizedBox(height: 20),
               Card(
                 shape: RoundedRectangleBorder(
@@ -69,7 +65,6 @@ class _ProcessingFeeState extends State<ProcessingFee> {
                         ),
                       ),
                       SizedBox(height: 20),
-
                       Text(
                         'You are just one click away from your "Dream Home". Pay processing fee to complete your loan sanction process.',
                         style: TextStyle(
@@ -171,8 +166,6 @@ class _ProcessingFeeState extends State<ProcessingFee> {
                           ],
                         ),
                       ),
-
-                      
                     ],
                   ),
                 ),

@@ -38,32 +38,6 @@ class _BasicInformationState extends State<BasicInformation> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
               const SizedBox(height: 30),
               const Text(
                 "Welcome , Amit!",

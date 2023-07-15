@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/pages/basicInfo.dart';
-// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:otp_text_field/otp_field.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 import 'package:otp_text_field/style.dart';
-// import 'basicInfo.dart';
 
 bool isChecked = false;
 
@@ -40,32 +38,7 @@ class _OTPValidationState extends State<OTPValidation> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
+              
               const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -138,8 +111,7 @@ class _OTPValidationState extends State<OTPValidation> {
                   alignment: Alignment.bottomCenter,
                   child: Container(
                     width: double.infinity,
-                    child: 
-                    ElevatedButton(
+                    child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,

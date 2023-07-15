@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/coApplicatnt.dart';
 import 'package:hl_demo/pages/homePage.dart';
 
 void main() {
@@ -18,10 +17,9 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const CoApplicant(),
+      home: const HomePage(),
       theme: ThemeData(
         // AppBar theme
-        // primarySwatch: buildMaterialColor(Color(0xFFF7B61A)),
         primaryColor: Color(0xffF7B61A),
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
