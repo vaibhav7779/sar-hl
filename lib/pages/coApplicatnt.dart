@@ -12,6 +12,8 @@ class CoApplicant extends StatefulWidget {
 }
 
 class _CoApplicantState extends State<CoApplicant> {
+  String dropdownIncome = 'Salaried';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,15 +69,40 @@ class _CoApplicantState extends State<CoApplicant> {
               const SizedBox(height: 10),
               const StepProgressIndicator(
                 totalSteps: 8,
-                currentStep: 4,
+                currentStep: 6,
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 34),
+              const Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: <Widget>[
+                  Text(
+                    "Congratulations!",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                  ),
+                  Text(
+                    "You have a loan offer of",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
+                  ),
+                  Text(
+                    "₹1,00,00,000",
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff45C00B),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               const Text(
-                "Verify your mobile",
-                style: const TextStyle(
-                  fontSize: 20,
+                "Click to view sanction letter",
+                style: TextStyle(
+                  fontSize: 12,
                   fontWeight: FontWeight.w400,
+                  color: Color(0xffE97A2A),
                 ),
               ),
               const SizedBox(height: 16),
@@ -105,7 +132,107 @@ class _CoApplicantState extends State<CoApplicant> {
                       //       "Resend OTP",
                       //       style: TextStyle(
                       //           color: Color.fromRGBO(233, 122, 42, 1)),
-                      //     ))
+                      //     ))                     const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "Tesseract PVT. LTD.",
+                        decoration: const InputDecoration(
+                          labelText: "Enter company name",
+                          labelStyle: TextStyle(color: Colors.grey),
+
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "2,50,000",
+                        decoration: const InputDecoration(
+                          labelText: "Your monthly income",
+                          labelStyle: TextStyle(color: Colors.grey),
+
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "amit.k@placebo.in",
+                        decoration: const InputDecoration(
+                          labelText: "Your official email id",
+                          labelStyle: TextStyle(color: Colors.grey),
+
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "2,50,000",
+                        decoration: const InputDecoration(
+                          labelText: "Your monthly income",
+                          labelStyle: TextStyle(color: Colors.grey),
+
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "amit.k@placebo.in",
+                        decoration: const InputDecoration(
+                          labelText: "Your official email id",
+                          labelStyle: TextStyle(color: Colors.grey),
+
+                          border: OutlineInputBorder(),
+                          filled: true, //<-- SEE HERE
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      DropdownButtonFormField(
+                        decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          labelText: 'Income Type',
+                          labelStyle: TextStyle(color: Colors.grey),
+                        ),
+                        iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
+                        dropdownColor: Colors.white,
+                        value: dropdownIncome,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownIncome = newValue!;
+                          });
+                        },
+                        items: <String>[
+                          'Salaried',
+                          'Self Employed',
+                        ].map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                            ),
+                          );
+                        }).toList(),
+                      ),
                     ],
                   ),
                 ),
