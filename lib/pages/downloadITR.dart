@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/loading.dart';
+import 'package:hl_demo/pages/verifyITR.dart';
 
-class ENach1 extends StatefulWidget {
-  const ENach1({super.key});
+class DownloadITR extends StatefulWidget {
+  const DownloadITR({super.key});
 
   @override
-  State<ENach1> createState() => _ThirdPartState();
+  State<DownloadITR> createState() => _ThirdPartState();
 }
 
-class _ThirdPartState extends State<ENach1> {
+class _ThirdPartState extends State<DownloadITR> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,17 +21,17 @@ class _ThirdPartState extends State<ENach1> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Loading(nextPage: 'approval'),
+                  builder: (context) => VerifyITR(),
                 ),
               );
             },
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(18.0),
               child: Image.asset(
-                "assets/bankk.png",
+                "assets/itrDownload.png",
                 fit: BoxFit.cover,
                 width: 400,
-                height: 740,
+                height: 710,
               ),
             ),
           ),

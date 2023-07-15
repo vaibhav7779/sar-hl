@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
 import 'package:hl_demo/pages/incomeVerification.dart';
-// import 'package:sar/pages/add_income_proof.dart';
-// import 'package:sar/pages/income_verification.dart';
-// import 'package:sar/pages/income_verification.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
@@ -49,34 +45,6 @@ class _AddBankState extends State<AddBank> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
-              // const SizedBox(height: 30),
-              // const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [Text("Salary Account"), Text("4/11")],

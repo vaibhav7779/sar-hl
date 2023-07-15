@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/login.dart';
 import 'package:hl_demo/pages/verifyITR.dart';
-// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
-// import 'package:sar/pages/add_bank.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = false;
@@ -15,8 +12,10 @@ class Employment extends StatefulWidget {
 }
 
 class _EmploymentState extends State<Employment> {
-  String dropdownIncome = 'Salaried';
-  String dropdownComp = 'Other';
+  String dropdownOccupation = 'Self Employed';
+  String dropdownIndustry = 'Automobile';
+  String dropdownTotalExp = '2 - 5 Years';
+  String dropdownCurrExp = '> 1 Year';
   bool? check1 = false;
   bool? check2 = false;
   @override
@@ -40,33 +39,6 @@ class _EmploymentState extends State<Employment> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
-              // const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [Text("Employment Details"), Text("3/11")],
@@ -89,7 +61,7 @@ class _EmploymentState extends State<Employment> {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
-                        "We will never try to contact your company",
+                        "Enter employment details",
                         style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
@@ -106,20 +78,20 @@ class _EmploymentState extends State<Employment> {
                           ),
                           filled: true,
                           fillColor: Colors.white,
-                          labelText: 'Income Type',
+                          labelText: 'Occupation Type',
                           labelStyle: TextStyle(color: Colors.grey),
                         ),
                         iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
                         dropdownColor: Colors.white,
-                        value: dropdownIncome,
+                        value: dropdownOccupation,
                         onChanged: (String? newValue) {
                           setState(() {
-                            dropdownIncome = newValue!;
+                            dropdownOccupation = newValue!;
                           });
                         },
                         items: <String>[
-                          'Salaried',
                           'Self Employed',
+                          'Salaried',
                         ].map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -142,18 +114,18 @@ class _EmploymentState extends State<Employment> {
                           ),
                           filled: true,
                           fillColor: Colors.white,
-                          labelText: 'Choose Company Name',
+                          labelText: 'Industry Type',
                           labelStyle: TextStyle(color: Colors.grey),
                         ),
                         iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
                         dropdownColor: Colors.white,
-                        value: dropdownComp,
+                        value: dropdownIndustry,
                         onChanged: (String? newValue) {
                           setState(() {
-                            dropdownComp = newValue!;
+                            dropdownIndustry = newValue!;
                           });
                         },
-                        items: <String>['EY', 'Placebo', 'Other']
+                        items: <String>['Automobile', 'Agriculture', 'Other']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -166,181 +138,141 @@ class _EmploymentState extends State<Employment> {
                       const SizedBox(height: 20),
                       TextFormField(
                         autofocus: false,
-                        initialValue: "Tesseract PVT. LTD.",
+                        initialValue: "Quadra",
                         decoration: const InputDecoration(
-                          labelText: "Enter company name",
+                          labelText: "Name of business",
                           labelStyle: TextStyle(color: Colors.grey),
 
                           border: OutlineInputBorder(),
                           filled: true, //<-- SEE HERE
+                          fillColor: Colors.white,
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      DropdownButtonFormField(
+                        decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          labelText: 'Total business vintage',
+                          labelStyle: TextStyle(color: Colors.grey),
+                        ),
+                        iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
+                        dropdownColor: Colors.white,
+                        value: dropdownTotalExp,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownTotalExp = newValue!;
+                          });
+                        },
+                        items: <String>['2 - 5 Years', '1 - 2 Years', 'Other']
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                      const SizedBox(height: 20),
+                      DropdownButtonFormField(
+                        decoration: const InputDecoration(
+                          enabledBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          focusedBorder: OutlineInputBorder(
+                            borderSide:
+                                BorderSide(color: Colors.black, width: 1),
+                          ),
+                          filled: true,
+                          fillColor: Colors.white,
+                          labelText: 'Years in current occupation',
+                          labelStyle: TextStyle(color: Colors.grey),
+                        ),
+                        iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
+                        dropdownColor: Colors.white,
+                        value: dropdownCurrExp,
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            dropdownCurrExp = newValue!;
+                          });
+                        },
+                        items: <String>['> 1 Year', '> 2 Years', 'Other']
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                            ),
+                          );
+                        }).toList(),
+                      ),
+                      const SizedBox(height: 20),
+                      ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Employment(),
+                              ));
+                        },
+                        child: Text("+ Click to add sources of income"),
+                        style: ElevatedButton.styleFrom(
+                            side: const BorderSide(color: Color(0xFFB81C22)),
+                            foregroundColor: const Color(0xFFB81C22),
+                            backgroundColor: const Color(0xFFFFFFFF)),
+                      ),
+                      const SizedBox(height: 10),
+                      const Text(
+                        "*Click to add additional sources of income like rental income, agricultural income etc.",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      const SizedBox(height: 30),
+                      TextFormField(
+                        autofocus: false,
+                        initialValue: "Fetched from PAN",
+                        decoration: const InputDecoration(
+                          labelText: "GSTIN number",
+                          border: OutlineInputBorder(),
+                          filled: true,
                           fillColor: Colors.white,
                         ),
                       ),
                       const SizedBox(height: 20),
                       TextFormField(
                         autofocus: false,
-                        initialValue: "2,50,000",
+                        initialValue: "Enter total current EMI(s) amount",
                         decoration: const InputDecoration(
-                          labelText: "Your monthly income",
+                          labelText: "Total current EMI(s)",
                           labelStyle: TextStyle(color: Colors.grey),
-
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
+                          filled: true,
                           fillColor: Colors.white,
                         ),
                       ),
-                      const SizedBox(height: 20),
-                      TextFormField(
-                        autofocus: false,
-                        initialValue: "amit.k@placebo.in",
-                        decoration: const InputDecoration(
-                          labelText: "Your official email id",
-                          labelStyle: TextStyle(color: Colors.grey),
-
-                          border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
-                          fillColor: Colors.white,
-                        ),
-                      ),
-                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 32.0,
               ),
               const SizedBox(height: 20),
               Container(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VerifyITR()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => VerifyITR()));
                   },
                   child: const Text("Next"),
                 ),
-
-//                 ElevatedButton(
-//                   onPressed: ()
-
-// {
-
-//                   Navigator.push(
-//                                               context,
-//                                               MaterialPageRoute(
-//                                                 builder: (context) =>
-//                                                     // AddAccount(),
-//                                                     LoginPage(),
-//                                               ),
-//                                             );
-// }
-//  child: const Text("Next"),
-//                 ),
-
-                // {
-
-                //   showModalBottomSheet<void>(
-                //     shape: const RoundedRectangleBorder(
-                //       borderRadius: BorderRadius.vertical(
-                //         top: Radius.circular(20),
-                //       ),
-                //     ),
-                //     context: context,
-                //     builder: (BuildContext context) {
-                //       return SizedBox(
-                //         height: 270,
-                //         child: Center(
-                //           child: Padding(
-                //             padding: const EdgeInsets.all(16.0),
-                //             child: Column(
-                //               mainAxisAlignment: MainAxisAlignment.center,
-                //               mainAxisSize: MainAxisSize.min,
-                //               children: <Widget>[
-                //                 const Text(
-                //                   'VERIFY YOUR DETAILS',
-                //                   style: TextStyle(fontSize: 10),
-                //                 ),
-                //                 const SizedBox(
-                //                   height: 20,
-                //                 ),
-                //                 const Text(
-                //                     'Enter OTP sent via mail to: amit.k@placebo.in'),
-                //                 const SizedBox(
-                //                   height: 20,
-                //                 ),
-                //                 TextFormField(
-                //                   autofocus: false,
-                //                   // initialValue: "123456",
-                //                   decoration: const InputDecoration(
-                //                     suffix: Text(
-                //                       "Resend OTP",
-                //                       style: TextStyle(
-                //                         color:
-                //                             Color.fromRGBO(233, 122, 42, 1),
-                //                         fontSize: 13,
-                //                         fontWeight: FontWeight.bold,
-                //                       ),
-                //                     ),
-                //                     labelText: "Enter OTP",
-
-                //                     labelStyle: TextStyle(color: Colors.grey),
-
-                //                     border: OutlineInputBorder(),
-                //                     filled: true, //<-- SEE HERE
-                //                     fillColor: Colors.white,
-                //                   ),
-                //                 ),
-                //                 const SizedBox(
-                //                   height: 20,
-                //                 ),
-                //                 Center(
-                //                   child: Align(
-                //                     alignment: Alignment.bottomCenter,
-                //                     child: Container(
-                //                       width: double.infinity,
-                //                       child: ElevatedButton(
-                //                         onPressed: () {
-                //                           Navigator.push(
-                //                             context,
-                //                             MaterialPageRoute(
-                //                               builder: (context) =>
-                //                                   // AddAccount(),
-                //                                   LoginPage(),
-                //                             ),
-                //                           );
-                //                         },
-                //                         child: const Text("Next"),
-                //                       ),
-                //                     ),
-                //                   ),
-                //                 ),
-                //                 const SizedBox(
-                //                   height: 20,
-                //                 ),
-                //                 TextButton(
-                //                     onPressed:
-                //                         (check1 == false && check1 == false)
-                //                             ? null
-                //                             : () {},
-                //                     child: const Text(
-                //                       "or verify via link",
-                //                       style: TextStyle(
-                //                           color:
-                //                               Color.fromRGBO(233, 122, 42, 1),
-                //                           fontSize: 13,
-                //                           fontWeight: FontWeight.bold),
-                //                     ))
-                //               ],
-                //             ),
-                //           ),
-                //         ),
-                //       );
-                //     },
-                //   );
-                // },
               ),
             ],
           ),

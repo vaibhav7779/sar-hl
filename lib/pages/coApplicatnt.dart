@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/addBank.dart';
-import 'package:hl_demo/pages/login.dart';
 import 'package:hl_demo/pages/processingFee.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
@@ -12,7 +10,7 @@ class CoApplicant extends StatefulWidget {
 }
 
 class _CoApplicantState extends State<CoApplicant> {
-  String dropdownIncome = 'Select';
+  String coApplicant = 'Select';
   String? consent;
   String? income;
 
@@ -181,10 +179,10 @@ class _CoApplicantState extends State<CoApplicant> {
                         ),
                         iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
                         dropdownColor: Colors.white,
-                        value: dropdownIncome,
+                        value: coApplicant,
                         onChanged: (String? newValue) {
                           setState(() {
-                            dropdownIncome = newValue!;
+                            coApplicant = newValue!;
                           });
                         },
                         items: <String>[

@@ -34,32 +34,6 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // BreadCrumb(
-              //   items: <BreadCrumbItem>[
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "HOME",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "PERSONAL LOANS",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //     BreadCrumbItem(
-              //       content: const Text(
-              //         "APPLY",
-              //         style:
-              //             TextStyle(fontSize: 10, fontWeight: FontWeight.w400),
-              //       ),
-              //     ),
-              //   ],
-              //   divider: const Icon(Icons.chevron_right),
-              // ),
               const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -113,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "Mobile Number",
                           hintText: "Enter Mobile Number",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
+                          filled: true,
                           fillColor: Color(0xFFFFFFFF),
                         ),
                       ),
@@ -130,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: "PAN",
                           hintText: "Enter PAN",
                           border: OutlineInputBorder(),
-                          filled: true, //<-- SEE HERE
+                          filled: true,
                           fillColor: Color(0xFFFFFFFF),
                         ),
                       ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/loading.dart';
+import 'package:hl_demo/pages/downloadITR.dart';
 
-class ENach1 extends StatefulWidget {
-  const ENach1({super.key});
+class ITRSite extends StatefulWidget {
+  const ITRSite({super.key});
 
   @override
-  State<ENach1> createState() => _ThirdPartState();
+  State<ITRSite> createState() => _ThirdPartState();
 }
 
-class _ThirdPartState extends State<ENach1> {
+class _ThirdPartState extends State<ITRSite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,17 +21,17 @@ class _ThirdPartState extends State<ENach1> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Loading(nextPage: 'approval'),
+                  builder: (context) => DownloadITR(),
                 ),
               );
             },
             child: Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(18.0),
               child: Image.asset(
-                "assets/bankk.png",
+                "assets/itrSite.png",
                 fit: BoxFit.cover,
                 width: 400,
-                height: 740,
+                height: 710,
               ),
             ),
           ),

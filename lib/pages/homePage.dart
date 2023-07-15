@@ -73,7 +73,6 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(top: 150.0, left: 20),
                       child: SizedBox(
                         width: 100,
-                        // height: 40,
                         child: ElevatedButton(
                           onPressed: () {},
                           child: Text('Apply Now'),
