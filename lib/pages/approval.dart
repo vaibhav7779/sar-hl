@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/pages/coApplicatnt.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:slider_controller/slider_controller.dart';
+import 'package:intl/intl.dart' as intl;
 
 enum ProductType { Gold, Silver, Dimond, Blank }
 
@@ -13,6 +15,25 @@ class Approval extends StatefulWidget {
 
 class _ApprovalState extends State<Approval> {
   ProductType? _productType;
+  var format = intl.NumberFormat.currency(
+    locale: 'en_IN',
+    decimalDigits: 0, // change it to get decimal places
+    symbol: '₹ ',
+  );
+  String _handleCalculation(amount, months) {
+    double rate = 9.5;
+    double interest = (amount * (rate * 0.01)) / months;
+    double total = ((amount / months) + interest).toInt();
+
+    String ret = format.format(total);
+    // String val = "₹$ret";
+    return ret;
+  }
+
+  int amount = 10000000;
+  RangeValues values = RangeValues(0, 1);
+  int age = 10000000;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,17 +67,17 @@ class _ApprovalState extends State<Approval> {
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 20),
-              const Column(
+              Column(
                 children: [
-                  Text(
+                  const Text(
                     "Congratulations!",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
                   ),
-                  Text(
+                  const Text(
                     "You have been approved for a",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
                   ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
@@ -74,14 +95,30 @@ class _ApprovalState extends State<Approval> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
-                  Text(
+                  const SizedBox(height: 20),
+                  const Text(
                     "Use the slider below to choose the loan amount",
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
-                  Text(
+                  const Text(
                     "you want to apply for",
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Slider(
+                    label: "Select Age",
+                    value: age.toDouble(),
+                    activeColor: Color(0xffF7B61A),
+                    onChanged: (value) {
+                      setState(() {
+                        age = value.toInt();
+                        amount = age;
+                      });
+                    },
+                    min: 5000000,
+                    max: 90000000,
                   ),
                 ],
               ),
@@ -117,9 +154,9 @@ class _ApprovalState extends State<Approval> {
                             shaderCallback: (bounds) => const LinearGradient(
                               colors: [Color(0xffF7B61A), Color(0xffE97A2A)],
                             ).createShader(bounds),
-                            child: const Text(
-                              '₹1,00,00,000',
-                              style: TextStyle(
+                            child: Text(
+                              format.format(amount),
+                              style: const TextStyle(
                                 fontSize: 34.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -167,12 +204,12 @@ class _ApprovalState extends State<Approval> {
                                   borderRadius: BorderRadius.circular(5.0)),
                               value: ProductType.Gold,
                               groupValue: _productType,
-                              title: const Row(
+                              title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    '₹96,800',
+                                    _handleCalculation(amount, 240),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -209,12 +246,12 @@ class _ApprovalState extends State<Approval> {
                                   borderRadius: BorderRadius.circular(5.0)),
                               value: ProductType.Silver,
                               groupValue: _productType,
-                              title: const Row(
+                              title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    '₹1,04,400',
+                                    _handleCalculation(amount, 180),
                                     style: TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
@@ -249,13 +286,13 @@ class _ApprovalState extends State<Approval> {
                                   borderRadius: BorderRadius.circular(5.0)),
                               value: ProductType.Dimond,
                               groupValue: _productType,
-                              title: const Row(
+                              title: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    '₹1,16,600',
-                                    style: TextStyle(
+                                    _handleCalculation(amount, 144),
+                                    style: const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.w700),
                                   ),
