@@ -20,7 +20,7 @@ class _PropertyDetailsState extends State<PropertyDetails> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -78,7 +78,7 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                               maxWidth: 300,
                             ),
                             child: RadioListTile(
-                              title: Text("Yes"),
+                              title: const Text("Yes"),
                               value: "Yes",
                               groupValue: consent,
                               onChanged: (value) {
@@ -94,7 +94,7 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                               maxWidth: 300,
                             ),
                             child: RadioListTile(
-                              title: Text("No"),
+                              title: const Text("No"),
                               value: "No",
                               groupValue: consent,
                               onChanged: (value) {
@@ -186,7 +186,7 @@ class _PropertyDetailsState extends State<PropertyDetails> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/pages/employment.dart';
 import 'package:hl_demo/pages/homePage.dart';
+import 'package:hl_demo/pages/incomeVerification.dart';
+import 'package:hl_demo/pages/login.dart';
+import 'package:hl_demo/pages/verifyITR.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<StatefulWidget> createState() {
     return _MyAppState();
@@ -17,10 +23,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const VerifyITR(),
       theme: ThemeData(
         // AppBar theme
-        primaryColor: Color(0xffF7B61A),
+        primaryColor: const Color(0xffF7B61A),
         appBarTheme: const AppBarTheme(
             backgroundColor: Color.fromRGBO(247, 182, 26, 1),
             centerTitle: false),
@@ -39,7 +45,7 @@ class _MyAppState extends State<MyApp> {
 // Text Button
         textButtonTheme: TextButtonThemeData(
           style: ElevatedButton.styleFrom(
-              foregroundColor: Color.fromRGBO(255, 31, 41, 1)),
+              foregroundColor: const Color.fromRGBO(255, 31, 41, 1)),
         ),
 
 // checkbox theme
@@ -75,8 +81,8 @@ class _MyAppState extends State<MyApp> {
           ),
         ),
         radioTheme: RadioThemeData(
-          fillColor:
-              MaterialStateColor.resolveWith((states) => Color(0xFFE11F2A)),
+          fillColor: MaterialStateColor.resolveWith(
+              (states) => const Color(0xFFE11F2A)),
         ), //
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(

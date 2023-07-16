@@ -28,12 +28,12 @@ class _AddBankState extends State<AddBank> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -47,7 +47,7 @@ class _AddBankState extends State<AddBank> {
             children: [
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Salary Account"), Text("4/11")],
+                children: [Text("Salary Account"), Text("4/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -66,9 +66,9 @@ class _AddBankState extends State<AddBank> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Text(
+                      const Text(
                         "Select tha bank of your salary account",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
@@ -107,7 +107,7 @@ class _AddBankState extends State<AddBank> {
                               value: value,
                               child: Text(
                                 value,
-                                style: TextStyle(fontSize: 16),
+                                style: const TextStyle(fontSize: 16),
                               ),
                             );
                           }).toList(),
@@ -139,7 +139,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'HDFC')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -174,7 +174,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'ICICI')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -209,7 +209,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'SBI')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -244,7 +244,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'Union Bank')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -287,7 +287,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'Axis Bank')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -322,7 +322,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'Bank of Baroda')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -357,7 +357,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'IDBI Bank')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -392,7 +392,7 @@ class _AddBankState extends State<AddBank> {
                             child: Card(
                               shape: (selectBank == 'Kotak Mahindra Bank')
                                   ? RoundedRectangleBorder(
-                                      side: new BorderSide(
+                                      side: const BorderSide(
                                           color: Color(0xffF7B61A), width: 4.0),
                                       borderRadius: BorderRadius.circular(10.0))
                                   : null,
@@ -428,7 +428,7 @@ class _AddBankState extends State<AddBank> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: (selectBank == 'Select Bank')
@@ -437,7 +437,8 @@ class _AddBankState extends State<AddBank> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => IncomeVerification(),
+                                    builder: (context) =>
+                                        const IncomeVerification(),
                                   ));
                             },
                       child: const Text("Next"),

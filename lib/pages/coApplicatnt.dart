@@ -23,7 +23,7 @@ class _CoApplicantState extends State<CoApplicant> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -215,7 +215,7 @@ class _CoApplicantState extends State<CoApplicant> {
                               maxWidth: 300,
                             ),
                             child: RadioListTile(
-                              title: Text("Yes"),
+                              title: const Text("Yes"),
                               value: "Yes",
                               groupValue: consent,
                               onChanged: (value) {
@@ -231,7 +231,7 @@ class _CoApplicantState extends State<CoApplicant> {
                               maxWidth: 300,
                             ),
                             child: RadioListTile(
-                              title: Text("No"),
+                              title: const Text("No"),
                               value: "No",
                               groupValue: consent,
                               onChanged: (value) {
@@ -256,7 +256,7 @@ class _CoApplicantState extends State<CoApplicant> {
                               maxWidth: 300,
                             ),
                             child: RadioListTile(
-                              title: Text("Yes"),
+                              title: const Text("Yes"),
                               value: "Yes",
                               groupValue: income,
                               onChanged: (value) {
@@ -272,7 +272,7 @@ class _CoApplicantState extends State<CoApplicant> {
                               maxWidth: 300,
                             ),
                             child: RadioListTile(
-                              title: Text("No"),
+                              title: const Text("No"),
                               value: "No",
                               groupValue: income,
                               onChanged: (value) {
@@ -291,14 +291,14 @@ class _CoApplicantState extends State<CoApplicant> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => CoApplicant(),
+                                  builder: (context) => const CoApplicant(),
                                 ));
                           },
-                          child: Text("+ Add another co-applicant"),
                           style: ElevatedButton.styleFrom(
                               side: const BorderSide(color: Color(0xFFB81C22)),
-                              foregroundColor: Color(0xFFB81C22),
-                              backgroundColor: Color(0xFFFFFFFF)),
+                              foregroundColor: const Color(0xFFB81C22),
+                              backgroundColor: const Color(0xFFFFFFFF)),
+                          child: const Text("+ Add another co-applicant"),
                         ),
                       ),
                       const SizedBox(
@@ -328,14 +328,14 @@ class _CoApplicantState extends State<CoApplicant> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ProcessingFee()));
+                                builder: (context) => const ProcessingFee()));
                       },
                       child: const Text("Next"),
                     ),

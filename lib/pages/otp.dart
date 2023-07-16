@@ -26,7 +26,7 @@ class _OTPValidationState extends State<OTPValidation> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -40,9 +40,9 @@ class _OTPValidationState extends State<OTPValidation> {
             children: [
               
               const SizedBox(height: 30),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Verify Your Details"), Text("1/11")],
+                children: [Text("Verify Your Details"), Text("1/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -53,7 +53,7 @@ class _OTPValidationState extends State<OTPValidation> {
               const SizedBox(height: 34),
               const Text(
                 "Verify your mobile",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
@@ -69,10 +69,10 @@ class _OTPValidationState extends State<OTPValidation> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Center(
-                        child: const Text(
+                      const Center(
+                        child: Text(
                           "Enter OTP",
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 14, fontWeight: FontWeight.w400),
                         ),
                       ),
@@ -86,14 +86,14 @@ class _OTPValidationState extends State<OTPValidation> {
                           fieldWidth: 45,
                           fieldStyle: FieldStyle.box,
                           outlineBorderRadius: 15,
-                          style: TextStyle(fontSize: 32),
+                          style: const TextStyle(fontSize: 32),
                           onChanged: (pin) {
-                            print("Changed: " + pin);
+                            print("Changed: $pin");
                           },
                           onCompleted: (pin) {
-                            print("Completed: " + pin);
+                            print("Completed: $pin");
                           }),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       TextButton(
                           onPressed: () {},
                           child: const Text(
@@ -109,14 +109,14 @@ class _OTPValidationState extends State<OTPValidation> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BasicInformation()));
+                                builder: (context) => const BasicInformation()));
                       },
                       child: const Text("Next"),
                     ),

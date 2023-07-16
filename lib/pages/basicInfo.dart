@@ -26,7 +26,7 @@ class _BasicInformationState extends State<BasicInformation> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -249,7 +249,7 @@ class _BasicInformationState extends State<BasicInformation> {
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed:
@@ -260,7 +260,7 @@ class _BasicInformationState extends State<BasicInformation> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Employment(),
+                        builder: (context) => const Employment(),
                       ),
                     );
                   },

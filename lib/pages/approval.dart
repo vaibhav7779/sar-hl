@@ -17,7 +17,7 @@ class _ApprovalState extends State<Approval> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
@@ -35,9 +35,9 @@ class _ApprovalState extends State<Approval> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 24),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Loan Offer"), Text("7/11")],
+                children: [Text("Loan Offer"), Text("7/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -46,19 +46,19 @@ class _ApprovalState extends State<Approval> {
                 selectedColor: Color(0xFF45C00B),
               ),
               const SizedBox(height: 20),
-              Column(
+              const Column(
                 children: [
-                  const Text(
+                  Text(
                     "Congratulations!",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
                   ),
-                  const Text(
+                  Text(
                     "You have been approved for a",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w200),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children: [
                       Text(
                         "loan of up to",
                         style: TextStyle(
@@ -74,12 +74,12 @@ class _ApprovalState extends State<Approval> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  const Text(
+                  SizedBox(height: 20),
+                  Text(
                     "Use the slider below to choose the loan amount",
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
-                  const Text(
+                  Text(
                     "you want to apply for",
                     style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                   ),
@@ -167,10 +167,10 @@ class _ApprovalState extends State<Approval> {
                                   borderRadius: BorderRadius.circular(5.0)),
                               value: ProductType.Gold,
                               groupValue: _productType,
-                              title: Row(
+                              title: const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
                                     '₹96,800',
                                     style: TextStyle(
@@ -209,10 +209,10 @@ class _ApprovalState extends State<Approval> {
                                   borderRadius: BorderRadius.circular(5.0)),
                               value: ProductType.Silver,
                               groupValue: _productType,
-                              title: Row(
+                              title: const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
                                     '₹1,04,400',
                                     style: TextStyle(
@@ -249,10 +249,10 @@ class _ApprovalState extends State<Approval> {
                                   borderRadius: BorderRadius.circular(5.0)),
                               value: ProductType.Dimond,
                               groupValue: _productType,
-                              title: Row(
+                              title: const Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
-                                children: const [
+                                children: [
                                   Text(
                                     '₹1,16,600',
                                     style: TextStyle(
@@ -296,7 +296,7 @@ class _ApprovalState extends State<Approval> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => CoApplicant(),
+                                builder: (context) => const CoApplicant(),
                               ),
                             );
                           },

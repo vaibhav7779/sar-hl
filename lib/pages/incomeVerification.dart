@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/pages/approval.dart';
 import 'package:hl_demo/pages/eNach.dart';
-// import 'package:flutter_breadcrumb/flutter_breadcrumb.dart';
+import 'package:breadcrumbs/breadcrumbs.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 bool isChecked = true;
@@ -23,12 +23,12 @@ class _IncomeVerificationState extends State<IncomeVerification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Personal Loan"),
+        title: const Text("Home Loan"),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -70,7 +70,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
               const SizedBox(height: 20),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Income Verification"), Text("5/11")],
+                children: [Text("Income Verification"), Text("5/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -231,14 +231,14 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Approval(),
+                          builder: (context) => const Approval(),
                         ));
                   },
-                  child: Text("Explore more options"),
                   style: ElevatedButton.styleFrom(
-                      side: BorderSide(color: Color(0xFFB81C22)),
-                      foregroundColor: Color(0xFFB81C22),
-                      backgroundColor: Color(0xFFFFFFFF)),
+                      side: const BorderSide(color: Color(0xFFB81C22)),
+                      foregroundColor: const Color(0xFFB81C22),
+                      backgroundColor: const Color(0xFFFFFFFF)),
+                  child: const Text("Explore more options"),
                 ),
               ),
               const SizedBox(
@@ -253,14 +253,14 @@ class _IncomeVerificationState extends State<IncomeVerification> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Enach(),
+                              builder: (context) => const Enach(),
                             ));
                       },
                       child: const Text("Next"),

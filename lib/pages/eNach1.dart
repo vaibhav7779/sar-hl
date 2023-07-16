@@ -21,7 +21,7 @@ class _ThirdPartState extends State<ENach1> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => Loading(nextPage: 'approval'),
+                  builder: (context) => const Loading(nextPage: 'approval'),
                 ),
               );
             },

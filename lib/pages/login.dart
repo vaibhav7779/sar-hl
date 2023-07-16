@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -35,9 +35,9 @@ class _LoginPageState extends State<LoginPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 10),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Verify Your Details"), Text("1/11")],
+                children: [Text("Verify Your Details"), Text("1/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 40),
               const Text(
                 "Enter your personal details",
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w400,
                 ),
@@ -66,7 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       const Text(
                         "Please enter accurate information that matches your KYC documents.",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
@@ -116,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => OTPValidation(),
+                              builder: (context) => const OTPValidation(),
                             ));
                       },
                       child: const Text("Next"),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/pages/login.dart';
+import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text("Home Loan"),
         actions: <Widget>[
           TextButton(
               onPressed: () {
@@ -73,6 +74,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(top: 150.0, left: 20),
                       child: SizedBox(
                         width: 100,
+                        // height: 40,
                         child: ElevatedButton(
                           onPressed: () {},
                           child: Text('Apply Now'),
@@ -104,25 +106,34 @@ class _HomePageState extends State<HomePage> {
               const SizedBox(
                 height: 12.0,
               ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   SizedBox(
-                    height: 74,
-                    width: 126,
                     child: Card(
-                      elevation: 4,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: 10.0),
-                            child: Icon(Icons.account_balance_wallet_outlined),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              "Current A/C",
-                              style: TextStyle(fontSize: 12),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 45, vertical: 14),
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.account_balance_wallet_outlined,
+                                  size: 30,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Current A/C",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
                             ),
                           ),
                         ],
@@ -133,21 +144,27 @@ class _HomePageState extends State<HomePage> {
                     width: 12,
                   ),
                   SizedBox(
-                    height: 74,
-                    width: 126,
                     child: Card(
-                      elevation: 4,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
                       child: Column(
                         children: [
                           Padding(
-                            padding: EdgeInsets.only(top: 10.0),
-                            child: Icon(Icons.savings_outlined),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              "Savings A/C",
-                              style: TextStyle(fontSize: 12),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 45, vertical: 14),
+                            child: Column(
+                              children: [
+                                Icon(Icons.savings_outlined, size: 30),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Savings A/C",
+                                  style: TextStyle(fontSize: 12),
+                                )
+                              ],
                             ),
                           ),
                         ],
@@ -156,31 +173,42 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 14,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  const SizedBox(
-                    height: 74,
-                    width: 126,
+                  SizedBox(
                     child: Card(
-                      elevation: 4,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 10.0),
-                            child: Icon(Icons.currency_rupee_outlined),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(top: 8.0),
-                            child: Text(
-                              "Personal Loan",
-                              style: TextStyle(fontSize: 12),
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      clipBehavior: Clip.hardEdge,
+                      child: InkWell(
+                        splashColor: Colors.amber,
+                        onTap: () {},
+                        child: const Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 40, vertical: 14),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.currency_rupee_outlined, size: 30),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Personal Loan",
+                                    style: TextStyle(fontSize: 12),
+                                  )
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -188,28 +216,32 @@ class _HomePageState extends State<HomePage> {
                     width: 12,
                   ),
                   SizedBox(
-                    height: 74,
-                    width: 126,
-                    child: Card(
-                      elevation: 4,
-                      clipBehavior: Clip.hardEdge,
-                      child: InkWell(
-                        splashColor: Colors.amber,
-                        onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => LoginPage()));
-                        },
-                        child: const Column(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => LoginPage()));
+                      },
+                      child: Card(
+                        elevation: 10,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                        child: Column(
                           children: [
                             Padding(
-                              padding: EdgeInsets.only(top: 10.0),
-                              child: Icon(Icons.house_outlined),
-                            ),
-                            Padding(
-                              padding: EdgeInsets.only(top: 8.0),
-                              child: Text(
-                                "Home Loan",
-                                style: TextStyle(fontSize: 12),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 48, vertical: 14),
+                              child: Column(
+                                children: [
+                                  Icon(Icons.house_outlined, size: 30),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Home Loan",
+                                    style: TextStyle(fontSize: 12),
+                                  )
+                                ],
                               ),
                             ),
                           ],
@@ -242,10 +274,6 @@ class _HomePageState extends State<HomePage> {
                 child: InkWell(
                   splashColor:
                       const Color.fromRGBO(255, 31, 41, 1).withAlpha(30),
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => LoginPage()));
-                  },
                   child: const Padding(
                     padding: EdgeInsets.all(20),
                     child: Column(

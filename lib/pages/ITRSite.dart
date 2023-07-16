@@ -21,7 +21,7 @@ class _ThirdPartState extends State<ITRSite> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DownloadITR(),
+                  builder: (context) => const DownloadITR(),
                 ),
               );
             },

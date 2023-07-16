@@ -27,7 +27,7 @@ class _EmploymentState extends State<Employment> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -39,9 +39,9 @@ class _EmploymentState extends State<Employment> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Employment Details"), Text("3/11")],
+                children: [Text("Employment Details"), Text("3/11")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -62,7 +62,7 @@ class _EmploymentState extends State<Employment> {
                     children: [
                       const Text(
                         "Enter employment details",
-                        style: const TextStyle(
+                        style: TextStyle(
                             fontSize: 14, fontWeight: FontWeight.w400),
                       ),
                       const SizedBox(height: 20),
@@ -225,11 +225,11 @@ class _EmploymentState extends State<Employment> {
                                 builder: (context) => const Employment(),
                               ));
                         },
-                        child: Text("+ Click to add sources of income"),
                         style: ElevatedButton.styleFrom(
                             side: const BorderSide(color: Color(0xFFB81C22)),
                             foregroundColor: const Color(0xFFB81C22),
                             backgroundColor: const Color(0xFFFFFFFF)),
+                        child: const Text("+ Click to add sources of income"),
                       ),
                       const SizedBox(height: 10),
                       const Text(
@@ -250,7 +250,7 @@ class _EmploymentState extends State<Employment> {
                       const SizedBox(height: 20),
                       TextFormField(
                         autofocus: false,
-                        initialValue: "Enter total current EMI(s) amount",
+                        // initialValue: "Enter total current EMI(s) amount",
                         decoration: const InputDecoration(
                           labelText: "Total current EMI(s)",
                           labelStyle: TextStyle(color: Colors.grey),
@@ -264,12 +264,14 @@ class _EmploymentState extends State<Employment> {
                 ),
               ),
               const SizedBox(height: 20),
-              Container(
+              SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => VerifyITR()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const VerifyITR()));
                   },
                   child: const Text("Next"),
                 ),

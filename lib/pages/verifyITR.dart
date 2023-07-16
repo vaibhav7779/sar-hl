@@ -30,7 +30,7 @@ class _VerifyITRState extends State<VerifyITR> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -39,12 +39,12 @@ class _VerifyITRState extends State<VerifyITR> {
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [Text("Income Verification"), Text("4/8")],
+                children: [Text("Income Verification"), Text("4/8")],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
@@ -52,7 +52,6 @@ class _VerifyITRState extends State<VerifyITR> {
                 currentStep: 4,
                 selectedColor: Color(0xFF45C00B),
               ),
-
               const SizedBox(height: 16),
               Card(
                 shape: RoundedRectangleBorder(
@@ -60,7 +59,7 @@ class _VerifyITRState extends State<VerifyITR> {
                 ),
                 elevation: 5,
                 child: Padding(
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
@@ -78,26 +77,42 @@ class _VerifyITRState extends State<VerifyITR> {
                         ),
                       ),
                       const SizedBox(height: 20),
-                      TextButton(
-                        onPressed: () {
+                      GestureDetector(
+                        onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const ITRSite()));
                         },
-                        child: const Align(
-                          alignment: AlignmentDirectional.centerStart,
-                          child: Text(
-                            "Click here to download ITR",
-                            style: TextStyle(
-                                color: Color(0xFF1A1A1A),
-                                fontSize: 18,
-                                fontStyle: FontStyle.italic,
-                                fontWeight: FontWeight.w600,
-                                decoration: TextDecoration.underline),
+                        child: const Text(
+                          "Click here to download ITR",
+                          style: TextStyle(
+                            color: Color(0xFF1A1A1A),
+                            fontSize: 18,
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
+                      // TextButton(
+                      //   onPressed: () {
+                      //     Navigator.push(
+                      //         context,
+                      //         MaterialPageRoute(
+                      //             builder: (context) => const ITRSite()));
+                      //   },
+                      //   child: const Text(
+                      //     "Click here to download ITR",
+                      //     style: TextStyle(
+                      //       color: Color(0xFF1A1A1A),
+                      //       fontSize: 18,
+                      //       fontStyle: FontStyle.italic,
+                      //       fontWeight: FontWeight.w600,
+                      //       decoration: TextDecoration.underline,
+                      //     ),
+                      //   ),
+                      // ),
                       const SizedBox(height: 20),
                       const Text(
                         "Latest 2 ITR from 3/4 PDF",
@@ -105,44 +120,45 @@ class _VerifyITRState extends State<VerifyITR> {
                           fontSize: 18,
                         ),
                       ),
-                      const SizedBox(height: 26),
-                      DropdownButtonFormField(
-                        decoration: const InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.black, width: 1),
-                          ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          labelText: 'Occupation Type',
-                          labelStyle: TextStyle(color: Colors.grey),
-                        ),
-                        iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
-                        dropdownColor: Colors.white,
-                        value: employment,
-                        onChanged: (String? newValue) {
-                          setState(() {
-                            employment = newValue!;
-                          });
-                        },
-                        items: <String>['Self Employed', 'Salaried']
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value,
-                            ),
-                          );
-                        }).toList(),
-                      ),
+                      // const SizedBox(height: 26),
+                      // DropdownButtonFormField(
+                      //   decoration: const InputDecoration(
+                      //     enabledBorder: OutlineInputBorder(
+                      //       borderSide:
+                      //           BorderSide(color: Colors.black, width: 1),
+                      //     ),
+                      //     focusedBorder: OutlineInputBorder(
+                      //       borderSide:
+                      //           BorderSide(color: Colors.black, width: 1),
+                      //     ),
+                      //     filled: true,
+                      //     fillColor: Colors.white,
+                      //     labelText: 'Occupation Type',
+                      //     labelStyle: TextStyle(color: Colors.grey),
+                      //   ),
+                      //   iconEnabledColor: const Color.fromRGBO(247, 182, 26, 1),
+                      //   dropdownColor: Colors.white,
+                      //   value: employment,
+                      //   onChanged: (String? newValue) {
+                      //     setState(() {
+                      //       employment = newValue!;
+                      //     });
+                      //   },
+                      //   items: <String>['Self Employed', 'Salaried']
+                      //       .map<DropdownMenuItem<String>>((String value) {
+                      //     return DropdownMenuItem<String>(
+                      //       value: value,
+                      //       child: Text(
+                      //         value,
+                      //       ),
+                      //     );
+                      //   }).toList(),
+                      // ),
                       const SizedBox(
                         height: 12,
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Expanded(
                             child: Theme(
@@ -185,7 +201,7 @@ class _VerifyITRState extends State<VerifyITR> {
                             padding: EdgeInsets.only(right: 18.0),
                             child: Icon(Icons.attach_file_outlined),
                           ),
-                          //  ),
+                          // Icon(Icons.attach_file_outlined),
                           Expanded(
                             child: Transform.translate(
                               offset: const Offset(-24, 0),
@@ -277,12 +293,14 @@ class _VerifyITRState extends State<VerifyITR> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => AddBank()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const AddBank()));
                       },
                       child: const Text("Next"),
                     ),

@@ -19,7 +19,7 @@ class _ProcessingFeeState extends State<ProcessingFee> {
           icon: const Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Icon(Icons.question_mark_rounded),
           SizedBox(width: 15)
         ],
@@ -174,14 +174,14 @@ class _ProcessingFeeState extends State<ProcessingFee> {
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
-                  child: Container(
+                  child: SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => PropertyDetails()));
+                                builder: (context) => const PropertyDetails()));
                       },
                       child: const Text("Next"),
                     ),
