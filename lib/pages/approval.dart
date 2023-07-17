@@ -118,7 +118,7 @@ class _ApprovalState extends State<Approval> {
                       });
                     },
                     min: 5000000,
-                    max: 90000000,
+                    max: 10000000,
                   ),
                 ],
               ),

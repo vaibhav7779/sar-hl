@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/pages/load-disbursed.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class PropertyDetails extends StatefulWidget {
@@ -190,8 +191,10 @@ class _PropertyDetailsState extends State<PropertyDetails> {
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(context,
-                        // MaterialPageRoute(builder: (context) => AddBank()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoanDisbursed()));
                       },
                       child: const Text("Next"),
                     ),

@@ -12,6 +12,8 @@ class LoginPage extends StatefulWidget {
   State<LoginPage> createState() => _LoginPageState();
 }
 
+String cardSel = 'agent';
+
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
@@ -54,6 +56,88 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        cardSel = 'customer';
+                      });
+                    },
+                    child: Card(
+                      shape: cardSel == 'customer'
+                          ? new RoundedRectangleBorder(
+                              side: new BorderSide(
+                                  color: Color(0xFFF7B61A), width: 2.0),
+                              borderRadius: BorderRadius.circular(4.0))
+                          : new RoundedRectangleBorder(
+                              side: new BorderSide(
+                                  color: Colors.white, width: 2.0),
+                              borderRadius: BorderRadius.circular(4.0)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/customer.png',
+                              height: 130,
+                              width: 130,
+                            ),
+                            const SizedBox(height: 10),
+                            const Text(
+                              "Customer",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        cardSel = 'agent';
+                      });
+                    },
+                    child: Card(
+                      shape: cardSel == 'agent'
+                          ? new RoundedRectangleBorder(
+                              side: new BorderSide(
+                                  color: Color(0xFFF7B61A), width: 2.0),
+                              borderRadius: BorderRadius.circular(4.0))
+                          : new RoundedRectangleBorder(
+                              side: new BorderSide(
+                                  color: Colors.white, width: 2.0),
+                              borderRadius: BorderRadius.circular(4.0)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              'assets/agent.png',
+                              height: 130,
+                              width: 130,
+                            ),
+                            const SizedBox(height: 10),
+                            const Text(
+                              "Agent",
+                              style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),

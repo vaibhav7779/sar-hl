@@ -3,6 +3,7 @@ import 'package:hl_demo/pages/approval.dart';
 import 'package:hl_demo/pages/employment.dart';
 import 'package:hl_demo/pages/homePage.dart';
 import 'package:hl_demo/pages/incomeVerification.dart';
+import 'package:hl_demo/pages/load-disbursed.dart';
 import 'package:hl_demo/pages/login.dart';
 import 'package:hl_demo/pages/verifyITR.dart';
 
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const LoanDisbursed(),
       theme: ThemeData(
         // AppBar theme
         primaryColor: const Color(0xffF7B61A),
