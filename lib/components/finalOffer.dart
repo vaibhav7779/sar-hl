@@ -101,34 +101,47 @@ class _FinalOfferState extends State<FinalOffer> {
                     children: [
                       Expanded(
                           child: const Padding(
-                            padding: EdgeInsets.only(left: 18.0),
-                            child: Text(
-                              "Loan Amount",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xff000000)),
-                            ),
-                          )),
+                        padding: EdgeInsets.only(left: 18.0),
+                        child: Text(
+                          "Loan Amount",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff000000)),
+                        ),
+                      )),
                       Expanded(
-                          child: ShaderMask(
-                            shaderCallback: (bounds) => const LinearGradient(
-                              colors: [Color(0xff000000), Color(0xff000000)],
-                            ).createShader(bounds),
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 16.0),
-                              child: Align(
-                                alignment: Alignment.bottomRight,
-                                child: Text(
-                                  format.format(amount),
-                                  style: const TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )),
+                          child: Padding(
+                        padding: EdgeInsets.only(right: 18.0),
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            format.format(amount),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
+                        ),
+                      )),
+                      // Expanded(
+                      //     child: ShaderMask(
+                      //       shaderCallback: (bounds) => const LinearGradient(
+                      //         colors: [Color(0xff000000), Color(0xff000000)],
+                      //       ).createShader(bounds),
+                      //       child: Padding(
+                      //         padding: const EdgeInsets.only(right: 16.0),
+                      //         child: Align(
+                      //           alignment: Alignment.bottomRight,
+                      //           child: Text(
+                      //             format.format(amount),
+                      //             style: const TextStyle(
+                      //               fontSize: 16.0,
+                      //               color: Colors.white,
+                      //               fontWeight: FontWeight.bold,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
+                      //     )),
                     ],
                   ),
                   Slider(
@@ -156,36 +169,49 @@ class _FinalOfferState extends State<FinalOffer> {
                     children: [
                       Expanded(
                           child: const Padding(
-                            padding: EdgeInsets.only(left: 18.0),
-                            child: Text(
-                              "Tenure",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color(0xff000000)),
-                            ),
-                          )),
-
+                        padding: EdgeInsets.only(left: 18.0),
+                        child: Text(
+                          "Tenure",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xff000000)),
+                        ),
+                      )),
                       Expanded(
-                          child: ShaderMask(
-                            shaderCallback: (bounds) => const LinearGradient(
-                              colors: [Color(0xff000000), Color(0xff000000)],
-                            ).createShader(bounds),
-                            child: Padding(
-                              padding: const EdgeInsets.only(right: 16.0),
-                              child: Align(
-                                alignment: Alignment.bottomRight,
-                                child: Text(
-                                  "30 Years",
-                                  // format.format(amount),
-                                  style: const TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )),
+                          child: const Padding(
+                        padding: EdgeInsets.only(right: 18.0),
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Text(
+                            "30 Years",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
+                        ),
+                      )),
+
+                      // Expanded(
+                      //     child: ShaderMask(
+                      //   shaderCallback: (bounds) => const LinearGradient(
+                      //     colors: [Color(0xff000000), Color(0xff000000)],
+                      //   ).createShader(bounds),
+                      //   child: Padding(
+                      //     padding: const EdgeInsets.only(right: 16.0),
+                      //     child: Align(
+                      //       alignment: Alignment.bottomRight,
+                      //       child: Text(
+                      //         "30 Years",
+                      //         // format.format(amount),
+                      //         style: const TextStyle(
+                      //           fontSize: 16.0,
+                      //           color: Colors.white,
+                      //           fontWeight: FontWeight.bold,
+                      //         ),
+                      //       ),
+                      //     ),
+                      //   ),
+                      // )),
 
                       // Expanded(
                       //     child: ConstrainedBox(
