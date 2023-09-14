@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/eNach1.dart';
+import 'package:hl_demo/components/hourGlass.dart';
 
-class Enach extends StatefulWidget {
-  const Enach({super.key});
+class ENach extends StatefulWidget {
+  const ENach({super.key});
 
   @override
-  State<Enach> createState() => _ThirdPartState();
+  State<ENach> createState() => _ThirdPartState();
 }
 
-class _ThirdPartState extends State<Enach> {
+class _ThirdPartState extends State<ENach> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,21 +18,20 @@ class _ThirdPartState extends State<Enach> {
           padding: const EdgeInsets.all(1.0),
           child: GestureDetector(
             onTap: () {
-              
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ENach1(),
+                  builder: (context) => const HourGlass(),
                 ),
               );
             },
             child: Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(10.0),
               child: Image.asset(
-                "assets/bank.png",
+                "assets/bankk.png",
                 fit: BoxFit.cover,
                 width: 400,
-                height: 710,
+                height: 740,
               ),
             ),
           ),

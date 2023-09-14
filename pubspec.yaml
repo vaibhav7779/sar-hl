@@ -41,6 +41,7 @@ dependencies:
   otp_text_field: ^1.1.3
   intl: ^0.18.1
   slider_controller: ^0.0.5
+  custom_components_shammy: ^0.0.1
 
 dev_dependencies:
   flutter_test:

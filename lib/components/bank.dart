@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/incomeVerification.dart';
-import 'package:step_progress_indicator/step_progress_indicator.dart';
+import 'package:hl_demo/components/income.dart';
 
 bool isChecked = false;
 
@@ -28,15 +27,26 @@ class _AddBankState extends State<AddBank> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home Loan"),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () => Navigator.of(context).pop(),
+        title: const Text(
+          "ICICI Bank",
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
         ),
-        actions: const <Widget>[
-          Icon(Icons.question_mark_rounded),
-          SizedBox(width: 15)
-        ],
+        leading: Image.asset(
+          "assets/icici.png",
+          height: 40,
+          width: 40,
+        ),
+        // leading: IconButton(
+        //   // icon: const Icon(Icons.arrow_back, color: Colors.white),
+        //   icon: Image.asset(
+        //     "assets/icici.png",
+        //     fit: BoxFit.cover,
+        //     width: 40,
+        //     height: 40,
+        //   ),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -45,17 +55,11 @@ class _AddBankState extends State<AddBank> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("Salary Account"), Text("4/11")],
+              const Text(
+                "Income Verification",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
               ),
-              const SizedBox(height: 10),
-              const StepProgressIndicator(
-                totalSteps: 11,
-                currentStep: 4,
-                selectedColor: Color(0xFF45C00B),
-              ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
               Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0),
@@ -424,7 +428,7 @@ class _AddBankState extends State<AddBank> {
                   ),
                 ),
               ),
-              const SizedBox(height: 60),
+              const SizedBox(height: 20),
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,

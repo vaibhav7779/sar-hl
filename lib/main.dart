@@ -1,11 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/pages/approval.dart';
-import 'package:hl_demo/pages/employment.dart';
-import 'package:hl_demo/pages/homePage.dart';
-import 'package:hl_demo/pages/incomeVerification.dart';
-import 'package:hl_demo/pages/load-disbursed.dart';
-import 'package:hl_demo/pages/login.dart';
-import 'package:hl_demo/pages/verifyITR.dart';
+import 'package:hl_demo/components/homePage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,18 +19,21 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const LoanDisbursed(),
+      home: const HomePage(),
+      // home: const CoApplicantDetails(),
+      // home: const CheckCustomComponents(),
       theme: ThemeData(
         // AppBar theme
-        primaryColor: const Color(0xffF7B61A),
+        primaryColor: const Color(0xffFFFFFF),
         appBarTheme: const AppBarTheme(
-            backgroundColor: Color.fromRGBO(247, 182, 26, 1),
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+            foregroundColor: Color(0xff02386e),
             centerTitle: false),
 
 // Elevated Button
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-            backgroundColor: const Color.fromRGBO(184, 28, 34, 1),
+            backgroundColor: const Color.fromRGBO(243, 126, 32, 1),
             padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
@@ -47,15 +44,15 @@ class _MyAppState extends State<MyApp> {
 // Text Button
         textButtonTheme: TextButtonThemeData(
           style: ElevatedButton.styleFrom(
-              foregroundColor: const Color.fromRGBO(255, 31, 41, 1)),
+              foregroundColor: const Color.fromRGBO(243, 126, 32, 1)),
         ),
 
 // checkbox theme
-        unselectedWidgetColor: const Color.fromRGBO(225, 31, 42, 1),
+        unselectedWidgetColor: const Color.fromRGBO(243, 126, 32, 1),
         checkboxTheme: CheckboxThemeData(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
           fillColor: MaterialStateColor.resolveWith(
-            (states) => const Color.fromRGBO(225, 31, 42, 1),
+            (states) => const Color.fromRGBO(243, 126, 32, 1),
           ),
         ),
 
@@ -69,22 +66,23 @@ class _MyAppState extends State<MyApp> {
         // text box outline color
         inputDecorationTheme: const InputDecorationTheme(
           isDense: true,
-          contentPadding: EdgeInsets.fromLTRB(10, 18, 10, 18),
+          contentPadding: EdgeInsets.fromLTRB(10, 6, 10, 6),
           filled: false,
           labelStyle: TextStyle(
             color: Color(0xFFBABABA),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.black),
+            borderSide: BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
           enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.all(Radius.circular(8)),
           ),
         ),
         radioTheme: RadioThemeData(
           fillColor: MaterialStateColor.resolveWith(
-              (states) => const Color(0xFFE11F2A)),
+              (states) => const Color.fromRGBO(243, 126, 32, 1)),
         ), //
 // cursor color
         textSelectionTheme: const TextSelectionThemeData(
