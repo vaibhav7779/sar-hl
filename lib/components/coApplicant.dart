@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:hl_demo/components/additionalIncome.dart';
 import 'package:hl_demo/components/bank.dart';
 
+enum Consent { yes, no }
+
+enum Family { yes, no }
+
 class CoApplicant extends StatefulWidget {
   const CoApplicant({super.key});
 
@@ -10,8 +14,10 @@ class CoApplicant extends StatefulWidget {
 }
 
 class _CoApplicantState extends State<CoApplicant> {
-  String? consent;
+  // String? consent;
   String? income;
+  Consent? _consent = Consent.no;
+  Family? _applicant = Family.no;
 
   @override
   Widget build(BuildContext context) {
@@ -68,14 +74,14 @@ class _CoApplicantState extends State<CoApplicant> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("Yes"),
-                          value: "Yes",
-                          groupValue: consent,
+                        child: RadioListTile<Consent>(
+                          title: const Text('Yes'),
+                          value: Consent.yes,
+                          groupValue: _consent,
                           onChanged: null,
-                          // (value) {
+                          // (Consent? value) {
                           //   setState(() {
-                          //     consent = value.toString();
+                          //     _consent = value;
                           //   });
                           // },
                         ),
@@ -85,17 +91,15 @@ class _CoApplicantState extends State<CoApplicant> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("No"),
-                          value: "No",
-                          groupValue: consent,
-                          onChanged: (value) {
+                        child: RadioListTile<Consent>(
+                          title: const Text('No'),
+                          value: Consent.no,
+                          groupValue: _consent,
+                          onChanged: (Consent? value) {
                             setState(() {
-                              consent = value.toString();
+                              _consent = value;
                             });
                           },
-                          // dense: true,
-                          // onChanged: null,
                         ),
                       )),
                     ],
@@ -103,7 +107,47 @@ class _CoApplicantState extends State<CoApplicant> {
                   const SizedBox(
                     height: 30,
                   ),
-                  const Text("Do you wish to add a co-applicant?"),
+                  // const Text("Do you wish to add a co-applicant?"),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        "Do you wish to add a co-applicant?",
+                        // style: TextStyle(
+                        //   color: Color(0xFF1A1A1A),
+                        //   fontSize: 18,
+                        //   // fontStyle: FontStyle.italic,
+                        //   fontWeight: FontWeight.w600,
+                        //   decoration: TextDecoration.underline,
+                        // ),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Tooltip(
+                        message:
+                            'Adding a financial co-\napplicant can increase your\nloan eligibility\n',
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(2),
+                            color: Color.fromRGBO(243, 126, 32, 1)),
+                        // height: 40,
+
+                        padding: const EdgeInsets.all(4.0),
+                        preferBelow: false,
+                        textStyle:
+                            const TextStyle(fontSize: 18, color: Colors.white),
+
+                        // message: 'fff',
+                        child: Icon(
+                          // <-- Icon
+                          Icons.info,
+                          size: 24.0,
+                          color: Color.fromRGBO(243, 126, 32, 1),
+                        ),
+                        //  Text("jbhdbdhj"),
+                      ),
+                    ],
+                  ),
                   Row(
                     children: [
                       Expanded(
@@ -111,14 +155,14 @@ class _CoApplicantState extends State<CoApplicant> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("Yes"),
-                          value: "Yes",
-                          groupValue: income,
+                        child: RadioListTile<Family>(
+                          title: const Text('Yes'),
+                          value: Family.yes,
+                          groupValue: _applicant,
                           onChanged: null,
-                          // (value) {
+                          // (Consent? value) {
                           //   setState(() {
-                          //     income = value.toString();
+                          //     _consent = value;
                           //   });
                           // },
                         ),
@@ -128,13 +172,13 @@ class _CoApplicantState extends State<CoApplicant> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("No"),
-                          value: "No",
-                          groupValue: income,
-                          onChanged: (value) {
+                        child: RadioListTile<Family>(
+                          title: const Text('No'),
+                          value: Family.no,
+                          groupValue: _applicant,
+                          onChanged: (Family? value) {
                             setState(() {
-                              income = value.toString();
+                              _applicant = value;
                             });
                           },
                         ),
@@ -145,6 +189,19 @@ class _CoApplicantState extends State<CoApplicant> {
                     height: 18,
                   ),
                 ],
+              ),
+              const SizedBox(height: 20),
+              Center(
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "Skip Now",
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Color.fromRGBO(105, 105, 105, 1),
+                        decoration: TextDecoration.underline),
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
               Center(

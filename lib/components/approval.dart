@@ -103,45 +103,35 @@ class _ApprovalState extends State<Approval> {
                     // crossAxisAlignment: cross,
                     children: [
                       Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 18.0),
-                          child: Text(
-                            "Loan Amount",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff000000)),
-                          ),
-                        ),
-                      )),
-                      Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
-                        child: ShaderMask(
-                          shaderCallback: (bounds) => const LinearGradient(
-                            colors: [Color(0xff000000), Color(0xff000000)],
-                          ).createShader(bounds),
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 16.0),
-                            child: Align(
-                              alignment: Alignment.bottomRight,
-                              child: Text(
-                                format.format(amount),
-                                style: const TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 18.0),
+                            child: Text(
+                              "Loan Amount",
+                              style: TextStyle(
                                   fontWeight: FontWeight.bold,
+                                  color: Color(0xff000000)),
+                            ),
+                          )),
+                      Expanded(
+                          child: ShaderMask(
+                            shaderCallback: (bounds) => const LinearGradient(
+                              colors: [Color(0xff000000), Color(0xff000000)],
+                            ).createShader(bounds),
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 16.0),
+                              child: Align(
+                                alignment: Alignment.bottomRight,
+                                child: Text(
+                                  format.format(amount),
+                                  style: const TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
-                      )),
+                          )),
                     ],
                   ),
                   Slider(
@@ -168,47 +158,37 @@ class _ApprovalState extends State<Approval> {
                   Row(
                     children: [
                       Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.only(left: 18.0),
-                          child: Text(
-                            "Tenure",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xff000000)),
-                          ),
-                        ),
-                      )),
+                          child: const Padding(
+                            padding: EdgeInsets.only(left: 18.0),
+                            child: Text(
+                              "Tenure",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(0xff000000)),
+                            ),
+                          )),
 
                       Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
-                        child: ShaderMask(
-                          shaderCallback: (bounds) => const LinearGradient(
-                            colors: [Color(0xff000000), Color(0xff000000)],
-                          ).createShader(bounds),
-                          child: Padding(
-                            padding: const EdgeInsets.only(right: 16.0),
-                            child: Align(
-                              alignment: Alignment.bottomRight,
-                              child: Text(
-                                "30 Years",
-                                // format.format(amount),
-                                style: const TextStyle(
-                                  fontSize: 16.0,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
+                          child: ShaderMask(
+                            shaderCallback: (bounds) => const LinearGradient(
+                              colors: [Color(0xff000000), Color(0xff000000)],
+                            ).createShader(bounds),
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 16.0),
+                              child: Align(
+                                alignment: Alignment.bottomRight,
+                                child: Text(
+                                  "30 Years",
+                                  // format.format(amount),
+                                  style: const TextStyle(
+                                    fontSize: 16.0,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                        ),
-                      )),
+                          )),
 
                       // Expanded(
                       //     child: ConstrainedBox(
@@ -436,7 +416,6 @@ class _ApprovalState extends State<Approval> {
                   //     const SizedBox(height: 30),
                   //   ],
                   // ),
-
                   TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -444,20 +423,49 @@ class _ApprovalState extends State<Approval> {
                           MaterialPageRoute(
                               builder: (context) => const CoApplicant()));
                     },
-                    child: const Text(
-                      "Click here to get a better offer",
-                      style: TextStyle(
-                        color: Color(0xFF1A1A1A),
-                        fontSize: 18,
-                        // fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.w600,
-                        decoration: TextDecoration.underline,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Click here to get a better offer",
+                          style: TextStyle(
+                            color: Color(0xFF1A1A1A),
+                            fontSize: 18,
+                            // fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Tooltip(
+                          message:
+                              'Adding a financial co-\napplicant and providing\nadditional sources of\nincome may help you get a\nbetter offer',
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(2),
+                              color: Color.fromRGBO(243, 126, 32, 1)),
+                          height: 100,
+
+                          padding: const EdgeInsets.all(12.0),
+                          preferBelow: false,
+                          textStyle: const TextStyle(
+                              fontSize: 18, color: Colors.white),
+
+                          // message: 'fff',
+                          child: Icon(
+                            // <-- Icon
+                            Icons.info,
+                            size: 24.0,
+                          ),
+                          //  Text("jbhdbdhj"),
+                        ),
+                      ],
                     ),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Center(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hl_demo/components/enach.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
+// bool isChecked = false;
 bool isChecked = false;
 
 class IncomeVerification extends StatefulWidget {
@@ -12,13 +13,12 @@ class IncomeVerification extends StatefulWidget {
 }
 
 class _IncomeVerificationState extends State<IncomeVerification> {
-  bool? check1 = false;
-  bool? check2 = false;
-  bool? check3 = false;
-
-  String? consent;
+  // String? consent;
   String dropdownMonths = 'xx Months';
   String dropdownYears = 'xx Years';
+  bool _value = false;
+  bool _value1 = false;
+  bool _value2 = true;
 
   @override
   Widget build(BuildContext context) {
@@ -160,10 +160,11 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                                               color: Color.fromRGBO(
                                                   186, 186, 186, 1))),
                                       trailing: Checkbox(
-                                        value: check1,
-                                        onChanged: (bool? value) {
+                                        value: _value,
+                                        onChanged: 
+                                        (bool? _value) {
                                           setState(() {
-                                            check1 = value;
+                                            _value = _value!;
                                           });
                                         },
                                       ),
@@ -175,16 +176,15 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                                         style: TextStyle(fontSize: 14),
                                       ),
                                       subtitle: const Text(
-                                          'Savings ********4937 ',
+                                          'Savings ********1234 ',
                                           style: TextStyle(
                                               fontSize: 12,
-                                              color: Color.fromRGBO(
-                                                  186, 186, 186, 1))),
+                                              color: Color(0xFFBABABA))),
                                       trailing: Checkbox(
-                                        value: check2,
-                                        onChanged: (bool? value) {
+                                        value: _value1,
+                                        onChanged: (bool? _value) {
                                           setState(() {
-                                            check2 = value;
+                                            _value1 = _value!;
                                           });
                                         },
                                       ),
@@ -196,16 +196,16 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                                         style: TextStyle(fontSize: 14),
                                       ),
                                       subtitle: const Text(
-                                          'Savings ********4937 ',
+                                          'Savings ********8846 ',
                                           style: TextStyle(
                                               fontSize: 12,
                                               color: Color.fromRGBO(
                                                   186, 186, 186, 1))),
                                       trailing: Checkbox(
-                                        value: check3,
-                                        onChanged: (bool? value) {
+                                        value: _value2,
+                                        onChanged: (bool? _value) {
                                           setState(() {
-                                            check3 = value;
+                                            _value2 = _value!;
                                           });
                                         },
                                       ),

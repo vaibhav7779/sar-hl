@@ -11,8 +11,7 @@ class Address extends StatefulWidget {
 }
 
 class _AddressState extends State<Address> {
-  bool? check1 = false;
-  bool? check2 = false;
+  
   bool _value = false;
   bool _value1 = false;
 

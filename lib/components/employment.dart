@@ -118,6 +118,7 @@ class _EmploymentState extends State<Employment> {
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(243, 126, 32, 1)),
                   ),
+                  
                   DropdownButtonFormField(
                     decoration: const InputDecoration(
                       enabledBorder: UnderlineInputBorder(

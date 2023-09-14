@@ -77,12 +77,12 @@ class _CongratulationsState extends State<Congratulations> {
                         //
 
                         Text(
-                          "Your Home Loan Application has been Sanctioned and ",
+                          "Your Home Loan Application has been Sanctioned and valid till December 14,2023",
                           // 'You are just one click away from your "Dream Home". Pay processing fee to complete your loan sanction process.',
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w400),
                         ),
-                        Center(child: Text("valid till December 14,2023")),
+                        // Center(child: Text("valid till December 14,2023")),
 
                         SizedBox(
                           height: 16,
@@ -151,41 +151,65 @@ class _CongratulationsState extends State<Congratulations> {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  children: [
-                    Expanded(
-                      child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
 
-                        child: const Icon(Icons.file_download_outlined),
-                        // IconButton( icon:Icon(Icons.arrow_back)),
-                        // Text(
-                        //   "City",
-                        //   style: TextStyle(
-                        //       fontSize: 14, fontWeight: FontWeight.bold),
-                        // ),
-                      ),
+                // Row(
+                //   children: [
+                //     Expanded(
+                //       child: ConstrainedBox(
+                //         constraints: const BoxConstraints(
+                //           maxWidth: 300,
+                //         ),
+
+                //         child: const Icon(Icons.file_download_outlined),
+                //         // IconButton( icon:Icon(Icons.arrow_back)),
+                //         // Text(
+                //         //   "City",
+                //         //   style: TextStyle(
+                //         //       fontSize: 14, fontWeight: FontWeight.bold),
+                //         // ),
+                //       ),
+                //     ),
+                //     Expanded(
+                //         child: ConstrainedBox(
+                //       constraints: const BoxConstraints(
+                //         maxWidth: 300,
+                //       ),
+                //       child: const Text(
+                //         "Download Sanction Letter",
+                //         style: TextStyle(
+                //             fontSize: 16,
+                //             fontWeight: FontWeight.w900,
+                //             color: Colors.orange),
+                //       ),
+                //       // Text(
+                //       //   "State",
+                //       //   style: TextStyle(
+                //       //       fontSize: 14, fontWeight: FontWeight.bold),
+                //       // ),
+                //     )),
+                //   ],
+                // ),
+
+                const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      // <-- Icon
+
+                      Icons.file_download_outlined,
+                      size: 30.0,
+                      color: Color.fromRGBO(243, 126, 32, 1),
                     ),
-                    Expanded(
-                        child: ConstrainedBox(
-                      constraints: const BoxConstraints(
-                        maxWidth: 300,
-                      ),
-                      child: const Text(
-                        "Download Sanction Letter",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.orange),
-                      ),
-                      // Text(
-                      //   "State",
-                      //   style: TextStyle(
-                      //       fontSize: 14, fontWeight: FontWeight.bold),
-                      // ),
-                    )),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(
+                      "Download Sanction Letter",
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w900,
+                          color: Colors.orange),
+                    ),
                   ],
                 ),
                 const SizedBox(

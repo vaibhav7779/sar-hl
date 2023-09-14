@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hl_demo/components/additionalIncome.dart';
 import 'package:hl_demo/components/approval.dart';
 import 'package:hl_demo/components/homePage.dart';
+import 'package:hl_demo/components/property.dart';
 
 void main() {
   runApp(const MyApp());

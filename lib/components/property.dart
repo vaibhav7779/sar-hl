@@ -16,6 +16,10 @@ class _PropertyState extends State<Property> {
   String? consent;
   String? income;
   Consent? _consent = Consent.yes;
+  String dropdownCity = 'City';
+  String dropdownBuilder = 'Builder';
+  String dropdownProject = 'Project';
+  String dropdownWing = 'Wing';
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +93,7 @@ class _PropertyState extends State<Property> {
                           maxWidth: 300,
                         ),
                         child: RadioListTile<Consent>(
-                          title: const Text('Salaried'),
+                          title: const Text('No'),
                           value: Consent.no,
                           groupValue: _consent,
                           onChanged: null,
@@ -104,58 +108,174 @@ class _PropertyState extends State<Property> {
                   const SizedBox(
                     height: 18,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.0)),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.orange, width: 1.0)),
-                        labelText: 'City'),
+                  // const TextField(
+                  //   decoration: InputDecoration(
+                  //       enabledBorder: UnderlineInputBorder(
+                  //           borderSide:
+                  //               BorderSide(color: Colors.grey, width: 1.0)),
+                  //       focusedBorder: UnderlineInputBorder(
+                  //           borderSide:
+                  //               BorderSide(color: Colors.orange, width: 1.0)),
+                  //       labelText: 'City'),
+                  // ),
+
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownCity,
+                    icon: Icon(Icons.search),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownCity = newValue!;
+                      });
+                    },
+                    items: <String>['City', 'Delhi', 'Mumbai', 'Bangalore']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+
+// children: <Widget>[
+//                           Icon(Icons.settings),
+//                           SizedBox(width: 10),
+//                           Text(
+//                             "Setting",
+//                           ),
+//                         ],
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
                   ),
                   const SizedBox(
                     height: 8,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.0)),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.orange, width: 1.0)),
-                        labelText: 'Builder'),
+                  // builder
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownBuilder,
+                    icon: Icon(Icons.search),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownBuilder = newValue!;
+                      });
+                    },
+                    items: <String>['Builder', 'Godrej', 'Unitech']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  // Project
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownProject,
+                    icon: Icon(Icons.search),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownProject = newValue!;
+                      });
+                    },
+                    items: <String>[
+                      'Project',
+                      'Project A',
+                      'Project B',
+                      'Project C'
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
                   ),
                   const SizedBox(
                     height: 8,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.0)),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.orange, width: 1.0)),
-                        labelText: 'Project'),
+                  // wing
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownWing,
+                    icon: Icon(Icons.search),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownWing = newValue!;
+                      });
+                    },
+                    items: <String>['Wing', 'Wing A', 'Wing B', 'Wing C']
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
                   ),
                   const SizedBox(
                     height: 8,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.grey, width: 1.0)),
-                        focusedBorder: UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Colors.orange, width: 1.0)),
-                        labelText: 'Wing'),
-                  ),
-                  const SizedBox(
-                    height: 8,
-                  ),
+                  // floor
                   const TextField(
                     decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(

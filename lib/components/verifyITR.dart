@@ -58,7 +58,13 @@ class _VerifyITRState extends State<VerifyITR> {
             children: [
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [Text("Income Verification"), Text("4/8")],
+                children: [
+                  Text(
+                    "Income Verification",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w900),
+                  ),
+                  Text("")
+                ],
               ),
               const SizedBox(height: 10),
               const StepProgressIndicator(
