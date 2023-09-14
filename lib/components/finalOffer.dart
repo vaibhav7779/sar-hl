@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/components/coApplicant.dart';
 import 'package:hl_demo/components/processing.dart';
 import 'package:intl/intl.dart' as intl;
 
@@ -29,10 +30,10 @@ class _FinalOfferState extends State<FinalOffer> {
   }
 
   int years = 30;
-  int yr = 3;
-  int amount = 12000000;
+  int yr = 30;
+  int amount = 15000000;
   RangeValues values = RangeValues(0, 1);
-  int age = 12000000;
+  int age = 15000000;
   bool? check1 = false;
   bool? check2 = false;
   @override
@@ -84,7 +85,7 @@ class _FinalOfferState extends State<FinalOffer> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "INR 1,20,00,000",
+                        "INR 1,50,00,000",
                         style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -95,17 +96,22 @@ class _FinalOfferState extends State<FinalOffer> {
                   ),
                   const SizedBox(height: 20),
                   Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    // crossAxisAlignment: cross,
                     children: [
                       Expanded(
                           child: ConstrainedBox(
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: const Text(
-                          "Loan Amount",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff000000)),
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 18.0),
+                          child: Text(
+                            "Loan Amount",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
                         ),
                       )),
                       Expanded(
@@ -117,12 +123,18 @@ class _FinalOfferState extends State<FinalOffer> {
                           shaderCallback: (bounds) => const LinearGradient(
                             colors: [Color(0xff000000), Color(0xff000000)],
                           ).createShader(bounds),
-                          child: Text(
-                            format.format(amount),
-                            style: const TextStyle(
-                              fontSize: 16.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 16.0),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Text(
+                                format.format(amount),
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -132,7 +144,7 @@ class _FinalOfferState extends State<FinalOffer> {
                   Slider(
                       label: "Select Age",
                       value: age.toDouble(),
-                      activeColor: Color(0xffF7B61A),
+                      activeColor: Color.fromRGBO(243, 126, 32, 1),
                       onChanged: (value) {
                         setState(() {
                           age = value.toInt();
@@ -140,10 +152,13 @@ class _FinalOfferState extends State<FinalOffer> {
                         });
                       },
                       min: 100000,
-                      max: 12000000),
-                  Align(
-                      alignment: Alignment.bottomLeft,
-                      child: const Text("Min 1L")),
+                      max: 15000000),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: const Text("Min 1L")),
+                  ),
                   const SizedBox(
                     height: 20,
                   ),
@@ -154,14 +169,17 @@ class _FinalOfferState extends State<FinalOffer> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: const Text(
-                          "Tenure",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff000000)),
+                        child: const Padding(
+                          padding: EdgeInsets.only(left: 18.0),
+                          child: Text(
+                            "Tenure",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
                         ),
-                        // const Text("Years"),
                       )),
+
                       Expanded(
                           child: ConstrainedBox(
                         constraints: const BoxConstraints(
@@ -171,125 +189,201 @@ class _FinalOfferState extends State<FinalOffer> {
                           shaderCallback: (bounds) => const LinearGradient(
                             colors: [Color(0xff000000), Color(0xff000000)],
                           ).createShader(bounds),
-                          child: Text(
-                            format.format(years),
-                            style: const TextStyle(
-                              fontSize: 16.0,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 16.0),
+                            child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Text(
+                                "30 Years",
+                                // format.format(amount),
+                                style: const TextStyle(
+                                  fontSize: 16.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       )),
+
+                      // Expanded(
+                      //     child: ConstrainedBox(
+                      //   constraints: const BoxConstraints(
+                      //     maxWidth: 300,
+                      //   ),
+                      //   child: ShaderMask(
+                      //     shaderCallback: (bounds) => const LinearGradient(
+                      //       colors: [Color(0xff000000), Color(0xff000000)],
+                      //     ).createShader(bounds),
+                      //     child: Text(
+                      //       "30",
+                      //       // format.format(years),
+                      //       style: const TextStyle(
+                      //         fontSize: 16.0,
+                      //         color: Colors.white,
+                      //         fontWeight: FontWeight.bold,
+                      //       ),
+                      //     ),
+                      //   ),
+                      // )),
                     ],
                   ),
                   Slider(
                       label: "Select Age",
                       value: yr.toDouble(),
-                      activeColor: Color(0xffF7B61A),
+                      activeColor: Color.fromRGBO(243, 126, 32, 1),
                       onChanged: (value) {
                         setState(() {
-                          yr = value.toInt();
-                          years = yr;
+                          years = value.toInt();
+                          yr = years;
                         });
                       },
                       min: 3,
                       max: 30),
-                  Align(
-                      alignment: Alignment.bottomLeft,
-                      child: const Text("Min 3 Years")),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Align(
+                        alignment: Alignment.bottomLeft,
+                        child: const Text("Min 3 Years")),
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: const Text(
-                      "Loan Details",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Align(
+                      alignment: Alignment.bottomLeft,
+                      child: const Text(
+                        "Loan Details",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
                   const SizedBox(
                     height: 16,
                   ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 300,
+                          ),
+                          child: const Text(
+                            "EMI",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
+                          // const Text("Years"),
+                        )),
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 18.0),
+                              child: Text(
+                                "INR 1,00,300",
+                                // _handleCalculation(amount, years),
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                          ),
                         ),
-                        child: const Text(
-                          "EMI",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff000000)),
-                        ),
-                        // const Text("Years"),
-                      )),
-                      Expanded(
-                        child: Text(
-                          _handleCalculation(amount, years),
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   const SizedBox(
                     height: 4,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
-                        child: const Text(
-                          "ROI",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff000000)),
-                        ),
-                        // const Text("Years"),
-                      )),
-                      Expanded(
-                        child: Text(
-                          "9%",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 4,
-                  ),
-                  Row(
-                    children: [
-                      Expanded(
-                          child: ConstrainedBox(
-                        constraints: const BoxConstraints(
-                          maxWidth: 300,
-                        ),
-                        child: const Text(
-                          "Processing Fees",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xff000000)),
-                        ),
-                        // const Text("Years"),
-                      )),
-                      Expanded(
-                        child: Text(
-                          "INR 2024",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.w700),
-                        ),
-                      ),
-                    ],
                   ),
 
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 300,
+                          ),
+                          child: const Text(
+                            "ROI",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
+                          // const Text("Years"),
+                        )),
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 18.0),
+                              child: Text(
+                                "9%",
+                                // _handleCalculation(amount, years),
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 18.0),
+                    child: Row(
+                      children: [
+                        Expanded(
+                            child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 300,
+                          ),
+                          child: const Text(
+                            "Processing Fees",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xff000000)),
+                          ),
+                          // const Text("Years"),
+                        )),
+                        Expanded(
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 18.0),
+                              child: Text(
+                                "INR 2024",
+                                // _handleCalculation(amount, years),
+                                style: TextStyle(
+                                    fontSize: 14, fontWeight: FontWeight.w700),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  // const Text(
+                  //   "I wish to increase my loan offer",
+                  //   style: TextStyle(
+                  //       fontWeight: FontWeight.bold,
+                  //       decoration: TextDecoration.underline),
+                  // ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -341,7 +435,9 @@ class _FinalOfferState extends State<FinalOffer> {
                   // ),
                 ],
               ),
-
+              SizedBox(
+                height: 20,
+              ),
               Center(
                 child: Align(
                   alignment: Alignment.bottomCenter,
@@ -354,30 +450,11 @@ class _FinalOfferState extends State<FinalOffer> {
                             MaterialPageRoute(
                                 builder: (context) => const ProcessingFee()));
                       },
-                      child: const Text("Next"),
+                      child: const Text("Confirm Offer"),
                     ),
                   ),
                 ),
               ),
-              // Align(
-              //   alignment: Alignment.bottomLeft,
-              //   child: SizedBox(
-              //     width: double.infinity,
-              //     child: ElevatedButton(
-              //       onPressed: (_productType == null)
-              //           ? null
-              //           : () {
-              //               Navigator.push(
-              //                 context,
-              //                 MaterialPageRoute(
-              //                   builder: (context) => const CoApplicant(),
-              //                 ),
-              //               );
-              //             },
-              //       child: const Text("Next"),
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         ),

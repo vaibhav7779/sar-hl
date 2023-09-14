@@ -13,6 +13,9 @@ class Address extends StatefulWidget {
 class _AddressState extends State<Address> {
   bool? check1 = false;
   bool? check2 = false;
+  bool _value = false;
+  bool _value1 = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,6 +115,7 @@ class _AddressState extends State<Address> {
                   const SizedBox(
                     height: 10,
                   ),
+
                   Row(
                     children: [
                       Expanded(
@@ -183,10 +187,10 @@ class _AddressState extends State<Address> {
                   Row(
                     children: [
                       Checkbox(
-                        value: check1,
-                        onChanged: (bool? value) {
+                        value: _value,
+                        onChanged: (value) {
                           setState(() {
-                            check1 = value;
+                            _value = value!;
                           });
                         },
                       ),
@@ -206,10 +210,10 @@ class _AddressState extends State<Address> {
                   Row(
                     children: [
                       Checkbox(
-                        value: check2,
-                        onChanged: (bool? value) {
+                        value: _value1,
+                        onChanged: (bool? _value) {
                           setState(() {
-                            check2 = value;
+                            _value1 = _value!;
                           });
                         },
                       ),
@@ -231,18 +235,24 @@ class _AddressState extends State<Address> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed:
+                  onPressed: _value == true || _value1 == true
+                      ?
+                      // check1 == false || check2 == false
+                      //     ? null
+                      //     :
+                      // onPressed:
                       // check1 == false || check2 == false
                       //     ? null
                       //     :
                       () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const Employment(),
-                      ),
-                    );
-                  },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const Employment(),
+                            ),
+                          );
+                        }
+                      : null,
                   child: const Text("Next"),
                 ),
               ),

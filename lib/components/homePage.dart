@@ -19,12 +19,12 @@ class _HomePage extends State<HomePage> {
           padding: const EdgeInsets.all(1.0),
           child: GestureDetector(
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const PersonalDetails(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const PersonalDetails(),
+              //   ),
+              // );
             },
             child: SizedBox(
               width: double.infinity,
@@ -33,10 +33,31 @@ class _HomePage extends State<HomePage> {
                 child: Image.asset(
                   "assets/home.png",
                   fit: BoxFit.cover,
-                  width: 400,
-                  height: 710,
+                  width: 300,
+                  height: 600,
                 ),
               ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              onPressed:
+                  // check1 == false || check2 == false
+                  //     ? null
+                  //     :
+                  () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PersonalDetails(),
+                  ),
+                );
+              },
+              child: const Text("Apply Now"),
             ),
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/additionalIncome.dart';
+import 'package:hl_demo/components/approval.dart';
 import 'package:hl_demo/components/homePage.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      // home: const AdditionalIncome(),
+      // home: const Approval(),
       // home: const CheckCustomComponents(),
       theme: ThemeData(
         // AppBar theme

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/hourGlass.dart';
+import 'package:hl_demo/components/loader.dart';
 
 class ENach extends StatefulWidget {
   const ENach({super.key});
@@ -33,7 +34,9 @@ class _ThirdPartState extends State<ENach> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HourGlass(),
+                      builder: (context) => const Loading(
+                        nextPage: 'approval',
+                      ),
                     ),
                   );
                 },

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/coApplicant.dart';
+import 'package:hl_demo/components/property.dart';
 import 'package:hl_demo/components/verifyITR.dart';
 
 bool isChecked = false;
+
+enum Occupation { Salaried, SelfEmployed }
 
 class Employment extends StatefulWidget {
   const Employment({super.key});
@@ -14,11 +17,14 @@ class Employment extends StatefulWidget {
 class _EmploymentState extends State<Employment> {
   bool? check1 = false;
   bool? check2 = false;
-  String? consent;
+  // int _radioSelected = 1;
+
+  // late String _consent;
   String dropdownOccupation = 'Self Employed';
   String dropdownIndustry = 'Automobile';
   String dropdownVintage = '2-5 Years';
   String dropdownCurrent = '>1 Year';
+  Occupation? _occ = Occupation.Salaried;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +60,7 @@ class _EmploymentState extends State<Employment> {
             children: [
               const SizedBox(height: 20),
               const Text(
-                "< Enter Employment Details",
+                "Enter Employment Details",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
@@ -79,16 +85,15 @@ class _EmploymentState extends State<Employment> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("Salaried"),
-                          value: "Salaried",
-                          groupValue: consent,
-                          onChanged: null,
-                          //  (value) {
-                          //   setState(() {
-                          //     consent = value.toString();
-                          //   });
-                          // },
+                        child: RadioListTile<Occupation>(
+                          title: const Text('Self-Employed'),
+                          value: Occupation.Salaried,
+                          groupValue: _occ,
+                          onChanged: (Occupation? value) {
+                            setState(() {
+                              _occ = value;
+                            });
+                          },
                         ),
                       )),
                       Expanded(
@@ -96,15 +101,11 @@ class _EmploymentState extends State<Employment> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("Self-employed"),
-                          value: "Self-employed",
-                          groupValue: consent,
-                          onChanged: (value) {
-                            setState(() {
-                              consent = value.toString();
-                            });
-                          },
+                        child: RadioListTile<Occupation>(
+                          title: const Text('Salaried'),
+                          value: Occupation.SelfEmployed,
+                          groupValue: _occ,
+                          onChanged: null,
                         ),
                       )),
                     ],
@@ -419,7 +420,7 @@ class _EmploymentState extends State<Employment> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const VerifyITR(),
+                        builder: (context) => const Property(),
                       ),
                     );
                   },

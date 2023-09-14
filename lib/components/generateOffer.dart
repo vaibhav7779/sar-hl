@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/finalOffer.dart';
+import 'package:hl_demo/components/loader.dart';
 
 class GenerateOffer extends StatefulWidget {
   const GenerateOffer({super.key});
@@ -75,7 +76,9 @@ class _GenerateOfferState extends State<GenerateOffer> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const FinalOffer(),
+                        builder: (context) => const Loading(
+                          nextPage: 'succss',
+                        ),
                       ),
                     );
                   },

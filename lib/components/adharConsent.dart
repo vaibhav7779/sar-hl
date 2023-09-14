@@ -11,8 +11,10 @@ class AdharConsent extends StatefulWidget {
 }
 
 class _AdharConsentState extends State<AdharConsent> {
-  bool? check1 = false;
-  bool? check2 = false;
+  
+  bool _value = false;
+  bool _value1 = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +62,7 @@ class _AdharConsentState extends State<AdharConsent> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "Enter Aadhar VID",
+                      "Enter Aadhar or VID",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -76,6 +78,7 @@ class _AdharConsentState extends State<AdharConsent> {
                         border: OutlineInputBorder(),
                         filled: true, //<-- SEE HERE
                         fillColor: Color(0xFFFFFFFF),
+                        labelText: '1234 5678 9232',
                       ),
                       // readOnly: true,
                     ),
@@ -84,13 +87,21 @@ class _AdharConsentState extends State<AdharConsent> {
                   Row(
                     children: [
                       Checkbox(
-                        value: check1,
-                        onChanged: (bool? value) {
+                        value: _value,
+                        onChanged: (value) {
                           setState(() {
-                            check1 = value;
+                            _value = value!;
                           });
                         },
                       ),
+                      // Checkbox(
+                      //   value: check1,
+                      //   onChanged: (bool? value) {
+                      //     setState(() {
+                      //       check1 = value;
+                      //     });
+                      //   },
+                      // ),
                       const SizedBox(width: 10),
                       const Flexible(
                         child: Text(
@@ -107,17 +118,17 @@ class _AdharConsentState extends State<AdharConsent> {
                   Row(
                     children: [
                       Checkbox(
-                        value: check2,
-                        onChanged: (bool? value) {
+                        value: _value1,
+                        onChanged: (bool? _value) {
                           setState(() {
-                            check2 = value;
+                            _value1 = _value!;
                           });
                         },
                       ),
                       const SizedBox(width: 10),
                       const Flexible(
                         child: Text(
-                          "I agree to the Terms and Conditions and Privacy Policy, and give my consent to ICICI Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details (from CERSA) for processing loan application",
+                          "I agree to the Terms and Conditions and Privacy Policy, and give my consent to ICICI Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details (from CERSAI) for processing loan application",
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -132,18 +143,20 @@ class _AdharConsentState extends State<AdharConsent> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed:
+                  onPressed: _value == true || _value1 == true
+                      ?
                       // check1 == false || check2 == false
                       //     ? null
                       //     :
                       () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const PersonalDetailsNTB(),
-                      ),
-                    );
-                  },
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const PersonalDetailsNTB(),
+                            ),
+                          );
+                        }
+                      : null,
                   child: const Text("Next"),
                 ),
               ),

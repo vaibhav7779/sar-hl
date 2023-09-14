@@ -54,7 +54,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
             children: [
               const SizedBox(height: 20),
               const Text(
-                "< Income Verification",
+                "Income Verification",
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
@@ -72,66 +72,25 @@ class _IncomeVerificationState extends State<IncomeVerification> {
 
               // account aggre
               const SizedBox(height: 30),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed:
-                      // check1 == false || check2 == false
-                      //     ? null
-                      //     :
-                      () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const CoApplicant(),
-                    //   ),
-                    // );
-                  },
-                  child: const Text("Account aggregator(Recommended)"),
-                ),
-              ),
-              // internet
-              const SizedBox(height: 26),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed:
-                      // check1 == false || check2 == false
-                      //     ? null
-                      //     :
-                      () {
-                    //   Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //       builder: (context) => const CoApplicant(),
-                    //     ),
-                    //   );
-                  },
-                  child: const Text("Internet Banking"),
-                ),
-              ),
-              // upload
-              const SizedBox(height: 26),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed:
-                      // check1 == false || check2 == false
-                      //     ? null
-                      //     :
-                      () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const CoApplicant(),
-                    //   ),
-                    // );
-                  },
-                  child: const Text(
-                      "Upload latest 6 months bank e-statements PDF"),
-                ),
-              ),
-              const SizedBox(height: 60),
+              // SizedBox(
+              //   width: double.infinity,
+              //   child: ElevatedButton(
+              //     onPressed:
+              //         // check1 == false || check2 == false
+              //         //     ? null
+              //         //     :
+              //         () {
+              //       // Navigator.push(
+              //       //   context,
+              //       //   MaterialPageRoute(
+              //       //     builder: (context) => const CoApplicant(),
+              //       //   ),
+              //       // );
+              //     },
+              //     child: const Text("Account aggregator(Recommended)"),
+              //   ),
+              // ),
+
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
@@ -329,7 +288,7 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                     // );
 //
                   },
-                  child: const Text("Next"),
+                  child: const Text("Account aggregator(Recommended)"),
                 ),
 
                 //     Navigator.push(
@@ -342,6 +301,49 @@ class _IncomeVerificationState extends State<IncomeVerification> {
                 //   child: const Text("Next"),
                 // ),
               ),
+
+              // internet
+              const SizedBox(height: 26),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed:
+                      // check1 == false || check2 == false
+                      //     ? null
+                      //     :
+                      () {
+                    //   Navigator.push(
+                    //     context,
+                    //     MaterialPageRoute(
+                    //       builder: (context) => const CoApplicant(),
+                    //     ),
+                    //   );
+                  },
+                  child: const Text("Internet Banking"),
+                ),
+              ),
+              // upload
+              const SizedBox(height: 26),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed:
+                      // check1 == false || check2 == false
+                      //     ? null
+                      //     :
+                      () {
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const CoApplicant(),
+                    //   ),
+                    // );
+                  },
+                  child: const Text(
+                      "Upload latest 6 months bank e-statements PDF"),
+                ),
+              ),
+              const SizedBox(height: 60),
             ],
           ),
         ),

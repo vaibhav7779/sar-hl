@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/bank.dart';
 import 'package:hl_demo/components/coApplicant.dart';
+import 'package:hl_demo/components/verifyITR.dart';
+
+enum Consent { yes, no }
 
 class Property extends StatefulWidget {
   const Property({super.key});
@@ -12,6 +15,7 @@ class Property extends StatefulWidget {
 class _PropertyState extends State<Property> {
   String? consent;
   String? income;
+  Consent? _consent = Consent.yes;
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +72,13 @@ class _PropertyState extends State<Property> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("Yes"),
-                          value: "Yes",
-                          groupValue: consent,
-                          onChanged: (value) {
+                        child: RadioListTile<Consent>(
+                          title: const Text('Yes'),
+                          value: Consent.yes,
+                          groupValue: _consent,
+                          onChanged: (Consent? value) {
                             setState(() {
-                              consent = value.toString();
+                              _consent = value;
                             });
                           },
                         ),
@@ -84,18 +88,11 @@ class _PropertyState extends State<Property> {
                         constraints: const BoxConstraints(
                           maxWidth: 300,
                         ),
-                        child: RadioListTile(
-                          title: const Text("No"),
-                          value: "No",
-                          groupValue: consent,
+                        child: RadioListTile<Consent>(
+                          title: const Text('Salaried'),
+                          value: Consent.no,
+                          groupValue: _consent,
                           onChanged: null,
-                          //  (value) {
-                          //   setState(() {
-                          //     consent = value.toString();
-                          //   });
-                          // },
-                          // dense: true,
-                          // onChanged: null,
                         ),
                       )),
                     ],
@@ -197,7 +194,7 @@ class _PropertyState extends State<Property> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CoApplicant()));
+                                builder: (context) => const VerifyITR()));
                       },
                       child: const Text("Next"),
                     ),

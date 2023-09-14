@@ -153,6 +153,7 @@ import 'package:hl_demo/components/additionalIncome.dart';
 import 'package:hl_demo/components/bank.dart';
 import 'package:hl_demo/components/finalOffer.dart';
 import 'package:hl_demo/components/generateOffer.dart';
+import 'package:hl_demo/components/loader.dart';
 
 class AdditionalIncome extends StatefulWidget {
   const AdditionalIncome({super.key});
@@ -289,7 +290,9 @@ class _AdditionalIncomeState extends State<AdditionalIncome> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const GenerateOffer()));
+                                builder: (context) => Loading(
+                                      nextPage: 'succss',
+                                    )));
                       },
                       child: const Text("Next"),
                     ),
