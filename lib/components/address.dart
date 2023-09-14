@@ -193,7 +193,7 @@ class _AddressState extends State<Address> {
                       const SizedBox(width: 10),
                       const Flexible(
                         child: Text(
-                          "Communication address is same as above",
+                          "Current address is same as above",
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w500,

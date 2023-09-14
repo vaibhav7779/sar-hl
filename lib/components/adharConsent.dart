@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/components/personalDetailsNTB.dart';
 
 bool isChecked = false;
 
@@ -136,12 +137,12 @@ class _AdharConsentState extends State<AdharConsent> {
                       //     ? null
                       //     :
                       () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const Employment(),
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PersonalDetailsNTB(),
+                      ),
+                    );
                   },
                   child: const Text("Next"),
                 ),

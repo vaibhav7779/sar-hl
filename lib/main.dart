@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/components/additionalIncome.dart';
 import 'package:hl_demo/components/homePage.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      // home: const CoApplicantDetails(),
+      // home: const AdditionalIncome(),
       // home: const CheckCustomComponents(),
       theme: ThemeData(
         // AppBar theme
@@ -66,7 +67,7 @@ class _MyAppState extends State<MyApp> {
         // text box outline color
         inputDecorationTheme: const InputDecorationTheme(
           isDense: true,
-          contentPadding: EdgeInsets.fromLTRB(10, 6, 10, 6),
+          contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
           filled: false,
           labelStyle: TextStyle(
             color: Color(0xFFBABABA),

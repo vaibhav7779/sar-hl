@@ -57,7 +57,7 @@ class _OTPValidationState extends State<OTPValidation> {
                     "Basic Information",
                     style: TextStyle(color: Color(0xFF45C00B)),
                   ),
-                  Text("3/6")
+                  Text("")
                 ],
               ),
               const SizedBox(height: 10),

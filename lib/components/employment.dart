@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/coApplicant.dart';
+import 'package:hl_demo/components/verifyITR.dart';
 
 bool isChecked = false;
 
@@ -14,8 +15,10 @@ class _EmploymentState extends State<Employment> {
   bool? check1 = false;
   bool? check2 = false;
   String? consent;
-  String dropdownMonths = 'xx Months';
-  String dropdownYears = 'xx Years';
+  String dropdownOccupation = 'Self Employed';
+  String dropdownIndustry = 'Automobile';
+  String dropdownVintage = '2-5 Years';
+  String dropdownCurrent = '>1 Year';
 
   @override
   Widget build(BuildContext context) {
@@ -58,8 +61,6 @@ class _EmploymentState extends State<Employment> {
                 ),
               ),
               const SizedBox(height: 10),
-
-              
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -82,11 +83,12 @@ class _EmploymentState extends State<Employment> {
                           title: const Text("Salaried"),
                           value: "Salaried",
                           groupValue: consent,
-                          onChanged: (value) {
-                            setState(() {
-                              consent = value.toString();
-                            });
-                          },
+                          onChanged: null,
+                          //  (value) {
+                          //   setState(() {
+                          //     consent = value.toString();
+                          //   });
+                          // },
                         ),
                       )),
                       Expanded(
@@ -108,15 +110,54 @@ class _EmploymentState extends State<Employment> {
                     ],
                   ),
                   const Divider(),
-
                   const Text(
-                    "Company name",
+                    "Industry Type",
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(243, 126, 32, 1)),
                   ),
-
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownIndustry,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownIndustry = newValue!;
+                      });
+                    },
+                    items: <String>[
+                      'Automobile',
+                      'Garage',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  const SizedBox(height: 4),
+                  const Text(
+                    "Name of Business",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(243, 126, 32, 1)),
+                  ),
                   const TextField(
                     decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -125,19 +166,125 @@ class _EmploymentState extends State<Employment> {
                         focusedBorder: UnderlineInputBorder(
                             borderSide:
                                 BorderSide(color: Colors.orange, width: 1.0)),
-                        labelText: 'Enter your company name'),
+                        labelText: 'Quadra'),
                   ),
-
                   const SizedBox(height: 4),
 
                   const Text(
-                    "Work Email",
+                    "Total Business Vintage",
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(243, 126, 32, 1)),
                   ),
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownVintage,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownVintage = newValue!;
+                      });
+                    },
+                    items: <String>[
+                      '2-5 Years',
+                      '1-2 Years',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  const SizedBox(height: 4),
+                  // 4
+                  const Text(
+                    "Years in current occupation",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(243, 126, 32, 1)),
+                  ),
+                  DropdownButtonFormField(
+                    decoration: const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      focusedBorder: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: Colors.grey, width: 1.0)),
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelStyle: TextStyle(color: Colors.grey),
+                    ),
+                    iconEnabledColor: Colors.grey,
+                    dropdownColor: Colors.white,
+                    value: dropdownCurrent,
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownCurrent = newValue!;
+                      });
+                    },
+                    items: <String>[
+                      '>1 Year',
+                      '>2 Year',
+                      '>3 Year',
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                          value,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        // context,
+                        // MaterialPageRoute(
+                        // builder: (context) => const CoApplicantDetails(),
+                        // ));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          side: const BorderSide(
+                              color: Color.fromRGBO(243, 126, 32, 1)),
+                          backgroundColor: Colors.white,
+                          foregroundColor: Color.fromRGBO(243, 126, 32, 1)),
+                      child: const Text("+ Click to add sources of income"),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
 
+                  const Text(
+                    "GSTIN number",
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(243, 126, 32, 1)),
+                  ),
                   const TextField(
                       decoration: InputDecoration(
                           enabledBorder: UnderlineInputBorder(
@@ -146,17 +293,15 @@ class _EmploymentState extends State<Employment> {
                           focusedBorder: UnderlineInputBorder(
                               borderSide:
                                   BorderSide(color: Colors.orange, width: 1.0)),
-                          labelText: 'Enter your work email')),
+                          labelText: 'Fetched from PAN')),
                   const SizedBox(height: 4),
-
                   const Text(
-                    "Designation",
+                    "Total Current EMI(s)",
                     style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Color.fromRGBO(243, 126, 32, 1)),
                   ),
-
                   const TextField(
                       decoration: InputDecoration(
                           isDense: true,
@@ -169,134 +314,97 @@ class _EmploymentState extends State<Employment> {
                             borderSide:
                                 BorderSide(color: Colors.orange, width: 1.0),
                           ),
-                          labelText: 'Enter your designation')),
-
+                          labelText: 'Enter total current EMI(s) amount')),
                   const SizedBox(height: 4),
-                  const Text(
-                    "Months in current occupation",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(243, 126, 32, 1)),
-                  ),
+                  // 1
+                  // const Text(
+                  //   "Occupation Type",
+                  //   style: TextStyle(
+                  //       fontSize: 14,
+                  //       fontWeight: FontWeight.bold,
+                  //       color: Color.fromRGBO(243, 126, 32, 1)),
+                  // ),
+                  // DropdownButtonFormField(
+                  //   decoration: const InputDecoration(
+                  //     enabledBorder: UnderlineInputBorder(
+                  //         borderSide:
+                  //             BorderSide(color: Colors.grey, width: 1.0)),
+                  //     focusedBorder: UnderlineInputBorder(
+                  //         borderSide:
+                  //             BorderSide(color: Colors.grey, width: 1.0)),
+                  //     filled: true,
+                  //     fillColor: Colors.white,
+                  //     labelStyle: TextStyle(color: Colors.grey),
+                  //   ),
+                  //   iconEnabledColor: Colors.grey,
+                  //   dropdownColor: Colors.white,
+                  //   value: dropdownOccupation,
+                  //   onChanged: (String? newValue) {
+                  //     setState(() {
+                  //       dropdownOccupation = newValue!;
+                  //     });
+                  //   },
+                  //   items: <String>['Self Employed', 'Salaried']
+                  //       .map<DropdownMenuItem<String>>((String value) {
+                  //     return DropdownMenuItem<String>(
+                  //       value: value,
+                  //       child: Text(
+                  //         value,
+                  //         style: TextStyle(color: Colors.grey),
+                  //       ),
+                  //     );
+                  //   }).toList(),
+                  // ),
+                  // const SizedBox(height: 4),
+                  // 2
 
-                  DropdownButtonFormField(
-                    decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.grey, width: 1.0)),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.grey, width: 1.0)),
-                      filled: true,
-                      fillColor: Colors.white,
-                      labelStyle: TextStyle(color: Colors.grey),
-                    ),
-                    iconEnabledColor: Colors.grey,
-                    dropdownColor: Colors.white,
-                    value: dropdownMonths,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownMonths = newValue!;
-                      });
-                    },
-                    items: <String>['xx Months', '> 3', '> 6', '> 9', '> 12']
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(
-                          value,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      );
-                    }).toList(),
-                  ),
+                  // 3
 
-                  const SizedBox(height: 4),
-                  const Text(
-                    "Total Work Experience",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(243, 126, 32, 1)),
-                  ),
-
-                  DropdownButtonFormField(
-                    decoration: const InputDecoration(
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.grey, width: 1.0)),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Colors.grey, width: 1.0)),
-                      filled: true,
-                      fillColor: Colors.white,
-                      labelStyle: TextStyle(color: Colors.grey),
-                    ),
-                    iconEnabledColor: Colors.grey,
-                    dropdownColor: Colors.white,
-                    value: dropdownYears,
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownYears = newValue!;
-                      });
-                    },
-                    items: <String>['xx Years', '1', '2', '3', '4', '> 12']
-                        .map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(
-                          value,
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: check1,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            check1 = value;
-                          });
-                        },
-                      ),
-                      const SizedBox(width: 10),
-                      const Flexible(
-                        child: Text(
-                          "Communication address is same as above",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: check2,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            check2 = value;
-                          });
-                        },
-                      ),
-                      const SizedBox(width: 10),
-                      const Flexible(
-                        child: Text(
-                          "I accept above detailed are correct and agree to the Terms and Conditions and Privacy policy, and give my consent to ICICI Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details(from CERSAI) for processing loan application ",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Checkbox(
+                  //       value: check1,
+                  //       onChanged: (bool? value) {
+                  //         setState(() {
+                  //           check1 = value;
+                  //         });
+                  //       },
+                  //     ),
+                  //     const SizedBox(width: 10),
+                  //     const Flexible(
+                  //       child: Text(
+                  //         "Current address is same as above",
+                  //         style: TextStyle(
+                  //           fontSize: 12,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                  // const SizedBox(height: 20),
+                  // Row(
+                  //   children: [
+                  //     Checkbox(
+                  //       value: check2,
+                  //       onChanged: (bool? value) {
+                  //         setState(() {
+                  //           check2 = value;
+                  //         });
+                  //       },
+                  //     ),
+                  //     const SizedBox(width: 10),
+                  //     const Flexible(
+                  //       child: Text(
+                  //         "I accept above detailed are correct and agree to the Terms and Conditions and Privacy policy, and give my consent to ICICI Bank as the lender to collect, store and verify my credit report from credit bureaus and KYC details(from CERSAI) for processing loan application ",
+                  //         style: TextStyle(
+                  //           fontSize: 12,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
               const SizedBox(height: 20),
@@ -311,7 +419,7 @@ class _EmploymentState extends State<Employment> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const CoApplicant(),
+                        builder: (context) => const VerifyITR(),
                       ),
                     );
                   },

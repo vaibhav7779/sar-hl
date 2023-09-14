@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/components/additionalIncome.dart';
 import 'package:hl_demo/components/bank.dart';
 
 class CoApplicant extends StatefulWidget {
@@ -71,11 +72,12 @@ class _CoApplicantState extends State<CoApplicant> {
                           title: const Text("Yes"),
                           value: "Yes",
                           groupValue: consent,
-                          onChanged: (value) {
-                            setState(() {
-                              consent = value.toString();
-                            });
-                          },
+                          onChanged: null,
+                          // (value) {
+                          //   setState(() {
+                          //     consent = value.toString();
+                          //   });
+                          // },
                         ),
                       )),
                       Expanded(
@@ -92,6 +94,8 @@ class _CoApplicantState extends State<CoApplicant> {
                               consent = value.toString();
                             });
                           },
+                          // dense: true,
+                          // onChanged: null,
                         ),
                       )),
                     ],
@@ -111,11 +115,12 @@ class _CoApplicantState extends State<CoApplicant> {
                           title: const Text("Yes"),
                           value: "Yes",
                           groupValue: income,
-                          onChanged: (value) {
-                            setState(() {
-                              income = value.toString();
-                            });
-                          },
+                          onChanged: null,
+                          // (value) {
+                          //   setState(() {
+                          //     income = value.toString();
+                          //   });
+                          // },
                         ),
                       )),
                       Expanded(
@@ -152,7 +157,8 @@ class _CoApplicantState extends State<CoApplicant> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const AddBank()));
+                                builder: (context) =>
+                                    const AdditionalIncome()));
                       },
                       child: const Text("Next"),
                     ),

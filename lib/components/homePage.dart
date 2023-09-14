@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hl_demo/components/personalDetails.dart';
 import 'package:hl_demo/components/select.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,7 +22,7 @@ class _HomePage extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const TypeOfCustomer(),
+                  builder: (context) => const PersonalDetails(),
                 ),
               );
             },

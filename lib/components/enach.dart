@@ -12,31 +12,43 @@ class _ThirdPartState extends State<ENach> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(children: [
-        Padding(
-          padding: const EdgeInsets.all(1.0),
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const HourGlass(),
-                ),
-              );
-            },
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Image.asset(
-                "assets/bankk.png",
-                fit: BoxFit.cover,
-                width: 400,
-                height: 740,
-              ),
-            ),
+        appBar: AppBar(
+          title: const Text(
+            "ICICI Bank",
+            style: TextStyle(
+                fontWeight: FontWeight.bold, fontStyle: FontStyle.italic),
+          ),
+          leading: Image.asset(
+            "assets/icici.png",
+            height: 40,
+            width: 40,
           ),
         ),
-      ]),
-    ));
+        body: SingleChildScrollView(
+          child: Column(children: [
+            Padding(
+              padding: const EdgeInsets.all(1.0),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HourGlass(),
+                    ),
+                  );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Image.asset(
+                    "assets/bankk.png",
+                    fit: BoxFit.cover,
+                    width: 400,
+                    height: 740,
+                  ),
+                ),
+              ),
+            ),
+          ]),
+        ));
   }
 }

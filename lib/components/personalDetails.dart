@@ -54,19 +54,20 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                 children: [
                   const SizedBox(height: 20),
                   const Text(
-                    "Enter Name",
+                    "Enter PAN",
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
                     autofocus: false,
-                    initialValue: "Amit Goyal",
+                    initialValue: "AAAAA000A",
                     decoration: const InputDecoration(
+                      // labelText: "PAN",
                       border: OutlineInputBorder(),
                       filled: true, //<-- SEE HERE
                       fillColor: Color(0xFFEBE7E7),
                     ),
-                    readOnly: true,
+                    readOnly: false,
                   ),
                   const SizedBox(height: 20),
                   const Text(
@@ -82,25 +83,9 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       filled: true, //<-- SEE HERE
                       fillColor: Color(0xFFEBE7E7),
                     ),
-                    readOnly: true,
+                    readOnly: false,
                   ),
                   const SizedBox(height: 20),
-                  const Text(
-                    "Enter PAN",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(height: 8),
-                  TextFormField(
-                    autofocus: false,
-                    initialValue: "AAAAA000A",
-                    decoration: const InputDecoration(
-                      // labelText: "PAN",
-                      border: OutlineInputBorder(),
-                      filled: true, //<-- SEE HERE
-                      fillColor: Color(0xFFEBE7E7),
-                    ),
-                    readOnly: true,
-                  ),
                   const SizedBox(height: 20),
                 ],
               ),

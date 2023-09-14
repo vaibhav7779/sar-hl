@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hl_demo/components/congratulations.dart';
+import 'package:hl_demo/components/processing.dart';
 import 'package:intl/intl.dart' as intl;
 
 enum ProductType { Gold, Silver, Dimond, Blank }
@@ -141,7 +141,9 @@ class _FinalOfferState extends State<FinalOffer> {
                       },
                       min: 100000,
                       max: 12000000),
-                  const Text("Min 1L"),
+                  Align(
+                      alignment: Alignment.bottomLeft,
+                      child: const Text("Min 1L")),
                   const SizedBox(
                     height: 20,
                   ),
@@ -193,13 +195,18 @@ class _FinalOfferState extends State<FinalOffer> {
                       },
                       min: 3,
                       max: 30),
-                  const Text("Min 3 Years"),
+                  Align(
+                      alignment: Alignment.bottomLeft,
+                      child: const Text("Min 3 Years")),
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    "Loan Details",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: const Text(
+                      "Loan Details",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                   const SizedBox(
                     height: 16,
@@ -286,52 +293,52 @@ class _FinalOfferState extends State<FinalOffer> {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: check1,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            check1 = value;
-                          });
-                        },
-                      ),
-                      const SizedBox(width: 10),
-                      const Flexible(
-                        child: Text(
-                          "Add financial co-applicant",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Checkbox(
+                  //       value: check1,
+                  //       onChanged: (bool? value) {
+                  //         setState(() {
+                  //           check1 = value;
+                  //         });
+                  //       },
+                  //     ),
+                  //     const SizedBox(width: 10),
+                  //     const Flexible(
+                  //       child: Text(
+                  //         "Add financial co-applicant",
+                  //         style: TextStyle(
+                  //           fontSize: 12,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   // const SizedBox(height: 20),
-                  Row(
-                    children: [
-                      Checkbox(
-                        value: check2,
-                        onChanged: (bool? value) {
-                          setState(() {
-                            check2 = value;
-                          });
-                        },
-                      ),
-                      const SizedBox(height: 10),
-                      const Flexible(
-                        child: Text(
-                          "Add additional income details",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 30),
-                    ],
-                  ),
+                  // Row(
+                  //   children: [
+                  //     Checkbox(
+                  //       value: check2,
+                  //       onChanged: (bool? value) {
+                  //         setState(() {
+                  //           check2 = value;
+                  //         });
+                  //       },
+                  //     ),
+                  //     const SizedBox(height: 10),
+                  //     const Flexible(
+                  //       child: Text(
+                  //         "Add additional income details",
+                  //         style: TextStyle(
+                  //           fontSize: 12,
+                  //           fontWeight: FontWeight.w500,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     const SizedBox(height: 30),
+                  //   ],
+                  // ),
                 ],
               ),
 
@@ -345,9 +352,9 @@ class _FinalOfferState extends State<FinalOffer> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const Congratulations()));
+                                builder: (context) => const ProcessingFee()));
                       },
-                      child: const Text("Confirm Loan Details"),
+                      child: const Text("Next"),
                     ),
                   ),
                 ),
