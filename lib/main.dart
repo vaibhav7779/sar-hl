@@ -24,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      // home: const VerifyITR(),
+      // home: const Approval(),
       // home: const CheckCustomComponents(),
       theme: ThemeData(
         // AppBar theme

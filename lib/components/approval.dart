@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hl_demo/components/coApplicant.dart';
-import 'package:hl_demo/components/coApplicantDetails.dart';
-import 'package:hl_demo/components/finalOffer.dart';
 import 'package:hl_demo/components/processing.dart';
-import 'package:hl_demo/components/property.dart';
 import 'package:intl/intl.dart' as intl;
-
-enum ProductType { Gold, Silver, Dimond, Blank }
+import 'package:hl_demo/components/global.dart' as globals;
 
 class Approval extends StatefulWidget {
   const Approval({super.key});
@@ -16,12 +12,20 @@ class Approval extends StatefulWidget {
 }
 
 class _ApprovalState extends State<Approval> {
-  ProductType? _productType;
+  int amount = globals.amount;
+  int years = globals.years;
+
   var format = intl.NumberFormat.currency(
     locale: 'en_IN',
     decimalDigits: 0, // change it to get decimal places
     symbol: '₹ ',
   );
+  var yr = intl.NumberFormat.currency(
+    locale: 'en_IN',
+    decimalDigits: 0, // change it to get decimal places
+    symbol: ' ',
+  );
+
   String _handleCalculation(amount, months) {
     double rate = 9.5;
     double interest = (amount * (rate * 0.01)) / months;
@@ -32,11 +36,6 @@ class _ApprovalState extends State<Approval> {
     return ret;
   }
 
-  int years = 30;
-  int yr = 30;
-  int amount = 12000000;
-  RangeValues values = RangeValues(0, 1);
-  int age = 12000000;
   bool? check1 = false;
   bool? check2 = false;
   @override
@@ -112,7 +111,6 @@ class _ApprovalState extends State<Approval> {
                               color: Color(0xff000000)),
                         ),
                       )),
-
                       Expanded(
                           child: Padding(
                         padding: EdgeInsets.only(right: 30.0),
@@ -126,38 +124,16 @@ class _ApprovalState extends State<Approval> {
                           ),
                         ),
                       )),
-
-                      // Expanded(
-                      //     child: ShaderMask(
-                      //       shaderCallback: (bounds) => const LinearGradient(
-                      //         colors: [Color(0xff000000), Color(0xff000000)],
-                      //       ).createShader(bounds),
-                      //       child: Padding(
-                      //         padding: const EdgeInsets.only(right: 16.0),
-                      //         child: Align(
-                      //           alignment: Alignment.bottomRight,
-                      //           child: Text(
-                      //             "",
-                      //             // format.format(amount),
-                      //             style: const TextStyle(
-                      //               fontSize: 16.0,
-                      //               color: Colors.white,
-                      //               fontWeight: FontWeight.bold,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     )),
                     ],
                   ),
                   Slider(
                       label: "Select Age",
-                      value: age.toDouble(),
+                      value: amount.toDouble(),
                       activeColor: Color.fromRGBO(243, 126, 32, 1),
                       onChanged: (value) {
                         setState(() {
-                          age = value.toInt();
-                          amount = age;
+                          amount = value.toInt();
+                          // amount = age;
                         });
                       },
                       min: 100000,
@@ -183,73 +159,29 @@ class _ApprovalState extends State<Approval> {
                               color: Color(0xff000000)),
                         ),
                       )),
-
                       Expanded(
-                          child: const Padding(
+                          child: Padding(
                         padding: EdgeInsets.only(right: 18.0),
                         child: Align(
                           alignment: Alignment.centerRight,
                           child: Text(
-                            "30 Years",
+                            yr.format(years) + " Years",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff000000)),
                           ),
                         ),
                       )),
-
-                      // Expanded(
-                      //     child: ShaderMask(
-                      //       shaderCallback: (bounds) => const LinearGradient(
-                      //         colors: [Color(0xff000000), Color(0xff000000)],
-                      //       ).createShader(bounds),
-                      //       child: Padding(
-                      //         padding: const EdgeInsets.only(right: 16.0),
-                      //         child: Align(
-                      //           alignment: Alignment.bottomRight,
-                      //           child: Text(
-                      //             "30 Years",
-                      //             // format.format(amount),
-                      //             style: const TextStyle(
-                      //               fontSize: 16.0,
-                      //               color: Colors.white,
-                      //               fontWeight: FontWeight.bold,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-                      //     )),
-
-                      // Expanded(
-                      //     child: ConstrainedBox(
-                      //   constraints: const BoxConstraints(
-                      //     maxWidth: 300,
-                      //   ),
-                      //   child: ShaderMask(
-                      //     shaderCallback: (bounds) => const LinearGradient(
-                      //       colors: [Color(0xff000000), Color(0xff000000)],
-                      //     ).createShader(bounds),
-                      //     child: Text(
-                      //       "30",
-                      //       // format.format(years),
-                      //       style: const TextStyle(
-                      //         fontSize: 16.0,
-                      //         color: Colors.white,
-                      //         fontWeight: FontWeight.bold,
-                      //       ),
-                      //     ),
-                      //   ),
-                      // )),
                     ],
                   ),
                   Slider(
                       label: "Select Age",
-                      value: yr.toDouble(),
+                      value: years.toDouble(),
                       activeColor: Color.fromRGBO(243, 126, 32, 1),
                       onChanged: (value) {
                         setState(() {
                           years = value.toInt();
-                          yr = years;
+                          // yr = years;
                         });
                       },
                       min: 3,
@@ -294,7 +226,6 @@ class _ApprovalState extends State<Approval> {
                                 fontWeight: FontWeight.bold,
                                 color: Color(0xff000000)),
                           ),
-                          // const Text("Years"),
                         )),
                         Expanded(
                           child: Align(
@@ -302,9 +233,9 @@ class _ApprovalState extends State<Approval> {
                             child: Padding(
                               padding: const EdgeInsets.only(right: 18.0),
                               child: Text(
-                                "INR 96,555",
-                                // _handleCalculation(amount, years),
-                                style: TextStyle(
+                                // "INR 96,555",
+                                _handleCalculation(amount, (years * 12)),
+                                style: const TextStyle(
                                     fontSize: 14, fontWeight: FontWeight.w700),
                               ),
                             ),
@@ -316,7 +247,6 @@ class _ApprovalState extends State<Approval> {
                   const SizedBox(
                     height: 4,
                   ),
-
                   Padding(
                     padding: const EdgeInsets.only(left: 18.0),
                     child: Row(
@@ -391,61 +321,9 @@ class _ApprovalState extends State<Approval> {
                   const SizedBox(
                     height: 10,
                   ),
-                  // const Text(
-                  //   "I wish to increase my loan offer",
-                  //   style: TextStyle(
-                  //       fontWeight: FontWeight.bold,
-                  //       decoration: TextDecoration.underline),
-                  // ),
                   const SizedBox(
                     height: 10,
                   ),
-                  // Row(
-                  //   children: [
-                  //     Checkbox(
-                  //       value: check1,
-                  //       onChanged: (bool? value) {
-                  //         setState(() {
-                  //           check1 = value;
-                  //         });
-                  //       },
-                  //     ),
-                  //     const SizedBox(width: 10),
-                  //     const Flexible(
-                  //       child: Text(
-                  //         "Add financial co-applicant",
-                  //         style: TextStyle(
-                  //           fontSize: 12,
-                  //           fontWeight: FontWeight.w500,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                  // const SizedBox(height: 20),
-                  // Row(
-                  //   children: [
-                  //     Checkbox(
-                  //       value: check2,
-                  //       onChanged: (bool? value) {
-                  //         setState(() {
-                  //           check2 = value;
-                  //         });
-                  //       },
-                  //     ),
-                  //     const SizedBox(height: 10),
-                  //     const Flexible(
-                  //       child: Text(
-                  //         "Add additional income details",
-                  //         style: TextStyle(
-                  //           fontSize: 12,
-                  //           fontWeight: FontWeight.w500,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //     const SizedBox(height: 30),
-                  //   ],
-                  // ),
                   TextButton(
                     onPressed: () {
                       Navigator.push(
@@ -477,19 +355,15 @@ class _ApprovalState extends State<Approval> {
                               borderRadius: BorderRadius.circular(2),
                               color: Color.fromRGBO(243, 126, 32, 1)),
                           height: 100,
-
                           padding: const EdgeInsets.all(12.0),
                           preferBelow: false,
                           textStyle: const TextStyle(
                               fontSize: 18, color: Colors.white),
-
-                          // message: 'fff',
                           child: Icon(
                             // <-- Icon
                             Icons.info,
                             size: 24.0,
                           ),
-                          //  Text("jbhdbdhj"),
                         ),
                       ],
                     ),

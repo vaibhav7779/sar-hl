@@ -77,12 +77,12 @@ class _CongratulationsState extends State<Congratulations> {
                         //
 
                         Text(
-                          "Your Home Loan Application has been",
+                          "Your Home Loan Application has",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w400),
                         ),
-Text(
-                          "Sanctioned and valid",
+                        Text(
+                          "been Sanctioned and valid",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w400),
                         ),
