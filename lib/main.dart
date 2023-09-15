@@ -23,8 +23,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: const HomePage(),
-      home: const VerifyITR(),
+      home: const HomePage(),
+      // home: const VerifyITR(),
       // home: const CheckCustomComponents(),
       theme: ThemeData(
         // AppBar theme
