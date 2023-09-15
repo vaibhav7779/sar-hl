@@ -3,6 +3,7 @@ import 'package:hl_demo/components/additionalIncome.dart';
 import 'package:hl_demo/components/approval.dart';
 import 'package:hl_demo/components/homePage.dart';
 import 'package:hl_demo/components/property.dart';
+import 'package:hl_demo/components/verifyITR.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,8 +23,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
-      // home: const Approval(),
+      // home: const HomePage(),
+      home: const VerifyITR(),
       // home: const CheckCustomComponents(),
       theme: ThemeData(
         // AppBar theme

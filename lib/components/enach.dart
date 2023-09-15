@@ -46,7 +46,7 @@ class _ThirdPartState extends State<ENach> {
                     "assets/bankk.png",
                     fit: BoxFit.cover,
                     width: 400,
-                    height: 740,
+                    height: 700,
                   ),
                 ),
               ),

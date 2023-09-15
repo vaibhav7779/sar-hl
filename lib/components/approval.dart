@@ -470,6 +470,7 @@ class _ApprovalState extends State<Approval> {
                           width: 5,
                         ),
                         Tooltip(
+                          triggerMode: TooltipTriggerMode.tap,
                           message:
                               'Adding a financial co-\napplicant and providing\nadditional sources of\nincome may help you get a\nbetter offer',
                           decoration: BoxDecoration(

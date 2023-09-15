@@ -125,6 +125,8 @@ class _CoApplicantState extends State<CoApplicant> {
                         width: 5,
                       ),
                       Tooltip(
+                        triggerMode: TooltipTriggerMode.tap,
+
                         message:
                             'Adding a financial co-\napplicant can increase your\nloan eligibility\n',
                         decoration: BoxDecoration(

@@ -77,13 +77,20 @@ class _CongratulationsState extends State<Congratulations> {
                         //
 
                         Text(
-                          "Your Home Loan Application has been Sanctioned and valid till December 14,2023",
-                          // 'You are just one click away from your "Dream Home". Pay processing fee to complete your loan sanction process.',
+                          "Your Home Loan Application has been",
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w400),
                         ),
-                        // Center(child: Text("valid till December 14,2023")),
-
+Text(
+                          "Sanctioned and valid",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w400),
+                        ),
+                        Text(
+                          "till December 14,2023",
+                          style: TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w400),
+                        ),
                         SizedBox(
                           height: 16,
                         ),
