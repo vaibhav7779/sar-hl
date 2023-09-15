@@ -180,40 +180,37 @@ class _VerifyITRState extends State<VerifyITR> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          SizedBox(
-                            width: 140,
-                            child: Expanded(
-                              child: Theme(
-                                data: theme.copyWith(
-                                    checkboxTheme: newCheckBoxTheme),
-                                child: CheckboxListTile(
-                                  side: MaterialStateBorderSide.resolveWith(
-                                    (states) => const BorderSide(
-                                        width: 2.0, color: Colors.green),
-                                  ),
-                                  activeColor: Colors.green,
-                                  value: checkboxValue1,
-                                  controlAffinity:
-                                      ListTileControlAffinity.leading,
-                                  onChanged: (bool? value) {
-                                    setState(() {
-                                      checkboxValue1 = value!;
-                                    });
-                                  },
-                                  title: Transform.translate(
-                                    offset: const Offset(-14, 0),
-                                    child: TextFormField(
-                                      autofocus: false,
-                                      decoration: const InputDecoration(
-                                        labelText: "PDF1",
-                                        hintText: "PDF1",
-                                        border: OutlineInputBorder(),
-                                        isDense: true,
-                                        contentPadding: EdgeInsets.fromLTRB(
-                                            8.0, 14.0, 0, 14.0),
-                                        filled: true,
-                                        fillColor: Color(0xFFFFFFFF),
-                                      ),
+                          Expanded(
+                            child: Theme(
+                              data: theme.copyWith(
+                                  checkboxTheme: newCheckBoxTheme),
+                              child: CheckboxListTile(
+                                side: MaterialStateBorderSide.resolveWith(
+                                  (states) => const BorderSide(
+                                      width: 2.0, color: Colors.green),
+                                ),
+                                activeColor: Colors.green,
+                                value: checkboxValue1,
+                                controlAffinity:
+                                    ListTileControlAffinity.leading,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    checkboxValue1 = value!;
+                                  });
+                                },
+                                title: Transform.translate(
+                                  offset: const Offset(-14, 0),
+                                  child: TextFormField(
+                                    autofocus: false,
+                                    decoration: const InputDecoration(
+                                      labelText: "PDF1",
+                                      hintText: "PDF1",
+                                      border: OutlineInputBorder(),
+                                      isDense: true,
+                                      contentPadding: EdgeInsets.fromLTRB(
+                                          8.0, 14.0, 0, 14.0),
+                                      filled: true,
+                                      fillColor: Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ),
@@ -250,40 +247,37 @@ class _VerifyITRState extends State<VerifyITR> {
                         children: [
                           // start
 
-                          SizedBox(
-                            width: 140,
-                            child: Expanded(
-                              child: Theme(
-                                data: theme.copyWith(
-                                    checkboxTheme: newCheckBoxTheme),
-                                child: CheckboxListTile(
-                                  side: MaterialStateBorderSide.resolveWith(
-                                    (states) => const BorderSide(
-                                        width: 2.0, color: Colors.green),
-                                  ),
-                                  activeColor: Colors.green,
-                                  value: checkboxValue2,
-                                  controlAffinity:
-                                      ListTileControlAffinity.leading,
-                                  onChanged: (bool? value) {
-                                    setState(() {
-                                      checkboxValue2 = value!;
-                                    });
-                                  },
-                                  title: Transform.translate(
-                                    offset: const Offset(-14, 0),
-                                    child: TextFormField(
-                                      autofocus: false,
-                                      decoration: const InputDecoration(
-                                        labelText: "PDF2",
-                                        hintText: "PDF2",
-                                        border: OutlineInputBorder(),
-                                        isDense: true,
-                                        contentPadding: EdgeInsets.fromLTRB(
-                                            8.0, 14.0, 0, 14.0),
-                                        filled: true,
-                                        fillColor: Color(0xFFFFFFFF),
-                                      ),
+                          Expanded(
+                            child: Theme(
+                              data: theme.copyWith(
+                                  checkboxTheme: newCheckBoxTheme),
+                              child: CheckboxListTile(
+                                side: MaterialStateBorderSide.resolveWith(
+                                  (states) => const BorderSide(
+                                      width: 2.0, color: Colors.green),
+                                ),
+                                activeColor: Colors.green,
+                                value: checkboxValue2,
+                                controlAffinity:
+                                    ListTileControlAffinity.leading,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    checkboxValue2 = value!;
+                                  });
+                                },
+                                title: Transform.translate(
+                                  offset: const Offset(-14, 0),
+                                  child: TextFormField(
+                                    autofocus: false,
+                                    decoration: const InputDecoration(
+                                      labelText: "PDF2",
+                                      hintText: "PDF2",
+                                      border: OutlineInputBorder(),
+                                      isDense: true,
+                                      contentPadding: EdgeInsets.fromLTRB(
+                                          8.0, 14.0, 0, 14.0),
+                                      filled: true,
+                                      fillColor: Color(0xFFFFFFFF),
                                     ),
                                   ),
                                 ),
